@@ -1,250 +1,131 @@
-"==========================================
-" ProjectLink: https://github.com/wklken/vim-for-server
-" Author:  wklken
-" Version: 0.2
-" Email: wklken@yeah.net
-" BlogPost: http://www.wklken.me
-" Donation: http://www.wklken.me/pages/donation.html
-" ReadMe: README.md
-" Last_modify: 2015-07-07
-" Desc: simple vim config for server, without any plugins.
-"==========================================
+" 				Vim Configure File					"
 
-" leader
-let mapleader = ','
-let g:mapleader = ','
+" General {{{
+	filetype plugin indent on
+	" vim 文件折叠方式为 marker
+	augroup ft_vim
+	    au!
+	    au FileType vim setlocal foldmethod=marker
+	augroup END
+	" 窗口显示
+	if has("gui_running")
+		au GUIEnter * simalt ~x "窗口启动时自动最大化
+		set guioptions-=m        "hide menu"
+		set guioptions-=T        "hide tool"
+		set guioptions-=r		" remove right-hand scroll bar
+		set guioptions-=l		" remove left-hand scroll bar
+		set guioptions-=L		" remove left-hand scroll bar even if there is a vertical split
+		set guioptions-=b		" remove bottom scroll bar
+	endif
+	set nocompatible
+	set history=1024
+	set whichwrap=b,s,<,>,[,]
+	set backspace=indent,eol,start whichwrap+=<,>,[,]
+	" Vim 的默认寄存器和系统剪贴板共享
+	set clipboard+=unnamed
+	" 设置 alt 键不映射到菜单栏
+	set winaltkeys=no
+	syntax on                   " 语法高亮
+	colorscheme desert			" 主题
+	set autoindent              " 自动缩进" 
+	set autowrite               " 自动保存文件"
+	set smartindent             " 智能对齐方式
+	set ignorecase smartcase    " 智能忽略大小写"
+	" set cursorline           	" 高亮当前行"
+	" 分割出来的窗口位于当前窗口下边/右边
+	set splitbelow
+	set splitright
+	set nu                		" 显示行号
+	set ruler                   " 显示当前光标的位置
+	" set hlsearch          	" 高亮显示
+	set incsearch         		" 实时显示查找的内容
+	set wrapscan        		" 在文件结尾处停止查找
+	set wrap
+	set autowrite         		" 自动保存文件"
+	set lcs=tab:\|\
+	set laststatus=1
+	set linespace=1				" 行间距
+	set noshowmode				" 在状态栏上不显示vim当前的模式
+	set fillchars=vert:.		" 分屏竖线
+	nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>		" 空格控制打开或关闭折叠
+" }}}
 
-" syntax
-syntax on
+" backup {{{
+	" set backup 
+	" set backupext=.bak
+	" set backupdir=e:\Vim\bak
+" }}}
 
-" history : how many lines of history VIM has to remember
-set history=2000
+" font {{{
+	set fencs=utf-8,usc-bom,gb18030,gb2312,gbk
+	set diffexpr=MyDiff()
+	" set guifont=Inconsolata:h15:b
+	set guifont=Monaco:h10:b
+	"set foldmethod=indent
+" }}}
 
-" filetype
-filetype on
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
+" Indentation {{{
+	set ts=4
+	" set softtabstop=4
+	set shiftwidth=4
+	" set listchars=tab:?\ ,eol:?,trail:·,extends:>,precedes:<
+" }}}
 
+" 标签页栏中去除当前所编辑文件的路径信息，只保留文件名{{{
+function! ShortTabLabel()
+    let bufnrlist = tabpagebuflist (v:lnum)
+    let label = bufname (bufnrlist[tabpagewinnr (v:lnum) -1])
+    let filename = fnamemodify (label, ':t')
+    return filename
+endfunction
+set guitablabel=%{ShortTabLabel()}
+" }}}
 
-" base
-set nocompatible                " don't bother with vi compatibility
-set autoread                    " reload files when changed on disk, i.e. via `git checkout`
-set shortmess=atI
+" shortcuts {{{
+    let g:mapleader = ','
+	nmap <leader>e :e $HOME/_vimrc<CR>
+	nmap <leader>s :source $HOME\_vimrc<CR>
+	" 插入模式移动光标 alt + 方向键
+	inoremap <M-j> <Down>
+	inoremap <M-k> <Up>
+	inoremap <M-h> <left>
+	inoremap <M-l> <Right>
+	" IDE like delete
+	inoremap <C-BS> <Esc>bdei
+	" 转换当前行为大写
+	inoremap <C-u> <esc>mzgUiw`za
+	" 命令模式下的行首尾
+	cnoremap <C-a> <home>
+	cnoremap <C-e> <end>
+	exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+	exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+	" 复制当前文件/路径到剪贴板
+	nmap <leader>fn :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+	nmap <leader>fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+	" 切换Buffer
+	nnoremap <C-right> :bn<CR>
+	nnoremap <C-left> :bp<CR>	
+" }}}
 
-set magic                       " For regular expressions turn magic on
-set title                       " change the terminal's title
-set nobackup                    " do not keep a backup file
-set wrap
+" Keywords {{{
+	iabbrev main int main(void)
+	iabbrev string String
+	iabbrev adt ADT
+	iabbrev seg segment
+" }}}
 
-set novisualbell                " turn off visual bell
-set noerrorbells                " don't beep
-set visualbell t_vb=            " turn off error beep/flash
-set t_vb=
-set tm=500
+" mydiff{{{
+function! MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  silent execute '!d:\Vim\vim64\diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+endfunction
+" }}}
 
-
-" show location
-set cursorcolumn
-" set cursorline
-
-
-" movement
-set scrolloff=7                 " keep 3 lines when scrolling
-
-
-" show
-set ruler                       " show the current row and column
-set number                      " show line numbers
-"set nowrap
-set showcmd                     " display incomplete commands
-set showmode                    " display current modes
-set showmatch                   " jump to matches when entering parentheses
-set matchtime=2                 " tenths of a second to show the matching parenthesis
-
-
-" search
-set hlsearch                    " highlight searches
-set incsearch                   " do incremental searching, search as you type
-set ignorecase                  " ignore case when searching
-set smartcase                   " no ignorecase if Uppercase char present
-
-
-" tab
-set expandtab                   " expand tabs to spaces
-set smarttab
-set shiftround
-
-" indent
-set autoindent smartindent shiftround
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4                " insert mode tab and backspace use 4 spaces
-
-" NOT SUPPORT
-" fold
-set foldenable
-set foldmethod=indent
-set foldlevel=99
-let g:FoldMethod = 0
-map <leader>zz :call ToggleFold()<cr>
-fun! ToggleFold()
-    if g:FoldMethod == 0
-        exe "normal! zM"
-        let g:FoldMethod = 1
-    else
-        exe "normal! zR"
-        let g:FoldMethod = 0
-    endif
-endfun
-
-" encoding
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set termencoding=utf-8
-set ffs=unix,dos,mac
-set formatoptions+=m
-set formatoptions+=B
-
-" select & complete
-set selection=inclusive
-set selectmode=mouse,key
-
-set completeopt=longest,menu
-set wildmenu                           " show a navigable menu for tab completion"
-set wildmode=longest,list,full
-set wildignore=*.o,*~,*.pyc,*.class
-
-" others
-set backspace=indent,eol,start  " make that backspace key work the way it should
-set whichwrap+=<,>,h,l
-
-" if this not work ,make sure .viminfo is writable for you
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" NOT SUPPORT
-" Enable basic mouse behavior such as resizing buffers.
-" set mouse=a
-
-
-" ============================ theme and status line ============================
-
-" theme
-set background=dark
-colorscheme desert
-
-" set mark column color
-hi! link SignColumn   LineNr
-hi! link ShowMarksHLl DiffAdd
-hi! link ShowMarksHLu DiffChange
-
-" status line
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-set laststatus=2   " Always show the status line - use 2 lines for the status bar
-
-
-" ============================ specific file type ===========================
-
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
-autocmd BufRead,BufNew *.md,*.mkd,*.markdown  set filetype=markdown.mkd
-
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-
-" ============================ key map ============================
-
-nnoremap k gk
-nnoremap gk k
-nnoremap j gj
-nnoremap gj j
-
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-nnoremap <F2> :set nu! nu?<CR>
-nnoremap <F3> :set list! list?<CR>
-nnoremap <F4> :set wrap! wrap?<CR>
-set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
-au InsertLeave * set nopaste
-nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
-
-" kj 替换 Esc
-inoremap kj <Esc>
-
-" Quickly close the current window
-nnoremap <leader>q :q<CR>
-" Quickly save the current file
-nnoremap <leader>w :w<CR>
-
-" select all
-map <Leader>sa ggVG"
-
-" remap U to <C-r> for easier redo
-nnoremap U <C-r>
-
-" Swap implementations of ` and ' jump to markers
-" By default, ' jumps to the marked line, ` jumps to the marked line and
-" column, so swap them
-nnoremap ' `
-nnoremap ` '
-
-" switch # *
-" nnoremap # *
-" nnoremap * #
-
-"Keep search pattern at the center of the screen."
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
-nnoremap <silent> * *zz
-nnoremap <silent> # #zz
-nnoremap <silent> g* g*zz
-
-" remove highlight
-noremap <silent><leader>/ :nohls<CR>
-
-"Reselect visual block after indent/outdent.调整缩进后自动选中，方便再次操作
-vnoremap < <gv
-vnoremap > >gv
-
-" y$ -> Y Make Y behave like other capitals
-map Y y$
-
-"Map ; to : and save a million keystrokes
-" ex mode commands made easy 用于快速进入命令行
-nnoremap ; :
-
-" save
-cmap w!! w !sudo tee >/dev/null %
-
-" command mode, ctrl-a to head， ctrl-e to tail
-cnoremap <C-j> <t_kd>
-cnoremap <C-k> <t_ku>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-
-" ============================ plugin ============================
-let g:NERDTreeMapOpenSplit = 's'
-let g:NERDTreeMapOpenVSplit = 'v'
-
-
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
- " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree'
-
-" Initialize plugin system
-call plug#end()
