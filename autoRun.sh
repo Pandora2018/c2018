@@ -5,3 +5,4 @@ sudo apt install -y tmux
 
 cp ./.gitconfig ~
 cp ./.vimrc ~
+cp ./.tmux.config ~
