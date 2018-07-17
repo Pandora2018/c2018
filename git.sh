@@ -2,7 +2,8 @@
 
 gitPushUrl="https://github.com/pandora2018/"
 
-operation:
+function choose()
+{
 	git status
 	echo "********************"
 	echo "Choose you operation"
@@ -13,32 +14,34 @@ operation:
 	echo "4 -- git push to github.com"
 	echo "5 -- finish"
 	echo "********************"
-
-	sleep 5
+}
+	choose
 
 	read -p "Select you operation(1 to 5):" num
 
-	if [ num -eq 1 ]; then
+	if [ ${num} -eq 1 ]; then
 		read -p "add file name:" addFile
 		echo $addFile
 		git add $addFile
-		goto operation
-	elif [ num -eq 2 ]; then
+		echo $?
+		choose
+	elif [ ${num} -eq 2 ]; then
 		read -p "remove file name:" rmFile
 		echo $rmFile
 		git rm $rmFile
-		goto operation
-	elif [ num -eq 3 ]; then
+		choose
+	elif [ ${num} -eq 3 ]; then
 		read -p "entor you commit information:" commitInfo
 		echo $commitInfo
 		git commit -m $commitInfo
-		goto operation
-	elif [ num -eq 4 ]; then
-		gitPushUrl="${gitPushUrl}"c2018.git
+		choose
+	elif [ ${num} -eq 4 ]; then
+		read -p "ecter you repositories name:" repositoriesName
+		gitPushUrl=${gitPushUrl}${repositoriesName}
 		echo ${gitPushUrl}
-		git push ${gitPushUrl} > /etc/null
-		goto operation
-	elif [ num -eq 5 ]; then
+		git push ${gitPushUrl}
+		choose
+	elif [ ${num} -eq 5 ]; then
 		echo "git operation finish"
 		exite 100
 	fi
