@@ -17,30 +17,37 @@ function choose()
 }
 	choose
 
+function readNum()
+{
 	read -p "Select you operation(1 to 5):" num
-
+}
+	readNum
 	if [ ${num} -eq 1 ]; then
 		read -p "add file name:" addFile
 		echo $addFile
 		git add $addFile
 		echo $?
 		choose
+		readNum
 	elif [ ${num} -eq 2 ]; then
 		read -p "remove file name:" rmFile
 		echo $rmFile
 		git rm $rmFile
 		choose
+		readNum
 	elif [ ${num} -eq 3 ]; then
 		read -p "entor you commit information:" commitInfo
 		echo $commitInfo
 		git commit -m $commitInfo
 		choose
+		readNum
 	elif [ ${num} -eq 4 ]; then
 		read -p "ecter you repositories name:" repositoriesName
 		gitPushUrl=${gitPushUrl}${repositoriesName}
 		echo ${gitPushUrl}
 		git push ${gitPushUrl}
 		choose
+		readNum
 	elif [ ${num} -eq 5 ]; then
 		echo "git operation finish"
 		exite 100
