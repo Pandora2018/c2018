@@ -1,24 +1,30 @@
 #include <stdio.h>
 
-int bikeSum(int month);
+int bikeCount(int month);
 
 int main(void)
 {
-   	int total = bikeSum(12);
+	unsigned short int months;
+	
+	printf("enter priduct months(1 to 999):");
+	scanf("%hu", &months);
+	
+   	unsigned int total = bikeCount(months);
 
-	printf("12 months late ,bike total is %d\n", total);
+	printf("%hu months late,bike total are %u\n", months, total);
 
     return 0;
 
 }
 
-int bikeSum(int month)
+int bikeCount(int month)
 {
 	if (month != 1)
 	{
-		int sum =bikeSum(month -1) + month;
+		int sum =bikeCount(month - 1) + month;
 		return sum;
-	} else {
+	} else
+	{
 		return 1;
 	}
 
