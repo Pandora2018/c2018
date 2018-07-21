@@ -3,7 +3,7 @@
 int main(void)
 {
 	int count = -1024;
-	double assets = -1024.76185;
+	double assets = -1.024e10;
 	char products[100] = "apple watch,iphone......";
 
 	unsigned int field_width, point_precision, string_num;
@@ -27,12 +27,12 @@ int main(void)
 	scanf("%*d %*d %s", last_colors);
 	printf("Last Color is %s\n",last_colors);
 
-	/* printf("enter value:");
+	printf("enter assets and products:");
 	int total = scanf("%5lf %s", &assets, products);
 
 	printf("assets:%5.2f,products:%s\n",
 			assets, products);
-	printf("scanf() function return %d input date\n", total); */
+	printf("scanf() function return %d input date\n", total);
 
 	// print EOF value(EOF = end of file)
 	// printf("EOF value:%d\n", EOF);
