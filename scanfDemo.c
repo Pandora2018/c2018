@@ -18,7 +18,6 @@ int main(void)
 	// print EOF value(EOF = end of file)
 	printf("EOF value:%d\n", EOF);
 	
-
 	return 0;
 
 }
