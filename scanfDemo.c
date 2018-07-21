@@ -3,17 +3,20 @@
 int main(void)
 {
 	int count;
-	long double assets;
+	double assets;
 	char products[100];
 	unsigned char age;
 	size_t length;
 
 	printf("enter value:");
-	int total = scanf("%d%Lf%s%hhu%zd", &count, &assets, products, &age, &length);
+	int total = scanf("%5lf %s", &assets, products);
 
-	printf("count=%d,asset=$%.2Lf,products:%s,age=%hhu,length=%zd\n",
-			count, assets, products, age, length);
-	printf("scanf() function return %d input date", total);
+	printf("assets:%5.2f,products:%s\n",
+			assets, products);
+	printf("scanf() function return %d input date\n", total);
+
+	// print EOF value(EOF = end of file)
+	printf("EOF value:%d\n", EOF);
 	
 
 	return 0;
