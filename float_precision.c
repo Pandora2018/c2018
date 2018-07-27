@@ -10,10 +10,8 @@ int main(void)
 
 	printf("enter precision:");
 	scanf("%u", &precision);
-	printf("\
-value1 is float  type,it's result:%.*f\n\
-value2 is double type,it's result:%.*f\n",
-precision, value1, precision, value2);
+	printf("value1 is float  type,it's result:%.*f\n" "value2 is double type,it's result:%.*f\n",
+            precision, value1, precision, value2);
 
 	return 0;
 
