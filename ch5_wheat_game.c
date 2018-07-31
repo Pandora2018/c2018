@@ -9,26 +9,28 @@ int main(void)
 	current = total = 1.0;
 
 	printf("----------------------------------\n");
-	printf("days\t\tcurrent\t\ttotal\n");
+	printf("|days\tcurrent\ttotal|\n");
 	printf("----------------------------------\n");
 
-	while(days <= SQUARE)
+	while (days <= SQUARE)
 	{
-		if(days == 1)
+		if (days == 1)
 		{
-			printf("%02d\t%.f\t%.f\n", days, current, total);
-		}else
+			printf("|%02d\t%-23.f\t%-23.f|\n", 
+					days, current, total);
+		} else
 		{
 			current = current * 2;
 			total = total + current;
-			printf("%02d\t%.f\t%.f\n", days, current, total);
+			printf("|%02d\t%-23.f\t%-23.f|\n", 
+					days, current, total);
 		}
 
 		days = days + 1;
 	}
 
 	printf("----------------------------------\n");
-	printf("wheat total mass:%.4ft\n", total * MASS / 1000000);
+	printf("wheat total mass:%.4e T\n", total * MASS / 1000000);
 
 	return 0;
 
