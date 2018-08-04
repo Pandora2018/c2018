@@ -3,8 +3,9 @@
 # install necessary software
 sudo apt install -y tmux
 
-cp ./.gitconfig ~
-cp ./.vimrc ~
-cp ./.tmux.config ~
+cp -v ./.gitconfig ~
+cp -v ./.vimrc ~
+cp -v ./.tmux.config ~
+cp -v ./.gdbinit ~
 
 echo "All operator running finish......"
