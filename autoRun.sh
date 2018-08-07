@@ -10,6 +10,6 @@ cp -v ./.tmux.config ~
 cp -v ./.gdbinit ~
 
 # alias
-alias la='la -A'
+alias la='ls -lAh'
 
 echo "All operator running finish......"
