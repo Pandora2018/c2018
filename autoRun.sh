@@ -2,7 +2,7 @@
 
 # install necessary software
 sudo apt install -y tmux
-sudo apt install -y gdb
+# sudo apt install -y gdb
 
 cp -v ./.gitconfig ~
 cp -v ./.vimrc ~
