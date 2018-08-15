@@ -1,5 +1,10 @@
 " 				Vim Configure File					"
 
+call plug#begin('~/.vim/plugged')
+Plug 'skywind3000/asyncrun.vim'
+" Plug 'Valloric/YouCompleteMe'"
+
+call plug#end()
 " General {{{
 	filetype plugin indent on
 	" vim 文件折叠方式为 marker
