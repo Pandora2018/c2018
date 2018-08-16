@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/plugged')
 " Plug 'skywind3000/asyncrun.vim'
 " Plug 'Valloric/YouCompleteMe'
-Plug 'ianva/vim-youdao-translater'	; youdao translation
+Plug 'ianva/vim-youdao-translater'	" youdao translation
 
 call plug#end()
 
