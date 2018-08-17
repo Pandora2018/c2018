@@ -3,10 +3,12 @@
 #include <stdio.h>
 
 void add10();	// function prototype
+double real_num_cube(void);
 
 int main(void)
 {
-	add10();
+	// add10();
+	printf("cube is %.3f\n", real_num_cube());
 
 	return 0;
 
@@ -30,5 +32,18 @@ void add10()
 	}
 
 	printf("\nOK....\n");
+
+}
+
+double real_num_cube(void)
+{
+	double real_num, result;
+	
+	printf("enter a real number(<= to quiet):");
+	scanf("%lf", &real_num);
+
+	result = real_num * real_num * real_num;
+
+	return result;
 
 }
