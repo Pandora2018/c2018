@@ -2,12 +2,14 @@
 
 #include <stdio.h>
 
+#define DISTANCE 10
+
 void add10();	// function prototype
 double real_num_cube(void);
 
 int main(void)
 {
-	// add10();
+	add10();
 	printf("cube is %.3f\n", real_num_cube());
 
 	return 0;
@@ -16,19 +18,16 @@ int main(void)
 
 void add10()
 {
-	int under_num, top_num;
+	int start_num, count;
+	count = 0;
 
-	printf("enter num(<=0 to quiet):");
-	scanf("%d", &under_num);
+	printf("enter numa:");
+	scanf("%d", &start_num);
 
-	top_num = under_num + 10;
-
-	while (under_num > 0)
+	while (count++ < 11)
 	{
-		printf("%d ", under_num++);
-
-		if (under_num > top_num)
-			break;	
+		printf("%d ", start_num);
+		start_num++;
 	}
 
 	printf("\nOK....\n");
