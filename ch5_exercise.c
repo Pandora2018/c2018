@@ -3,14 +3,19 @@
 #include <stdio.h>
 
 #define DISTANCE 10
+#define DAYS_PER_YEAR 360
+#define DAYS_PER_MONTH 30
+#define DAYS_PER_WEEK 7
 
 void add10();	// function prototype
 double real_num_cube(void);
+void data_convert(unsigned int days);
 
 int main(void)
 {
-	add10();
-	printf("cube is %.3f\n", real_num_cube());
+	// add10();
+	// printf("cube is %.3f\n", real_num_cube());
+	data_convert(120478);
 
 	return 0;
 
@@ -44,5 +49,19 @@ double real_num_cube(void)
 	result = real_num * real_num * real_num;
 
 	return result;
+
+}
+
+void data_convert(unsigned int days)
+{
+	unsigned int year, month, weekday, day;
+
+	year = days / DAYS_PER_YEAR;
+	month = days % DAYS_PER_YEAR / DAYS_PER_MONTH;
+	weekday = days % DAYS_PER_YEAR % DAYS_PER_MONTH / DAYS_PER_WEEK;
+	day = days % DAYS_PER_YEAR % DAYS_PER_MONTH % DAYS_PER_WEEK;
+
+	printf("%u days convert to %03u years %02u month %02u week %03u day\n",
+			days, year, month, weekday, day);
 
 }
