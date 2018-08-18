@@ -1,9 +1,9 @@
 " Vim Configure File
 
 call plug#begin('~/.vim/plugged')
-" Plug 'skywind3000/asyncrun.vim'
 " Plug 'Valloric/YouCompleteMe'
-Plug 'ianva/vim-youdao-translater'	" youdao translation
+Plug 'iamcco/dict.vim'			" youdao translation
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
