@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'iamcco/dict.vim'			" youdao translation
 Plug 'Raimondi/delimitMate'
-Plug 'sickill/vim-monokai'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
@@ -34,7 +34,7 @@ call plug#end()
 	" 设置 alt 键不映射到菜单栏
 	set winaltkeys=no
 	syntax on                   " 语法高亮
-	colorscheme desert			" 主题
+	colorscheme industry		" 主题
 	set autoindent              " 自动缩进" 
 	set autowrite               " 自动保存文件"
 	set smartindent             " 智能对齐方式
