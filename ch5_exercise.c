@@ -9,12 +9,14 @@
 #define SEC_PER_HOUR 3600
 #define SEC_PER_MINUTE 60
 
-void add10();	// function prototype
+void add10();	
 void num_after(int start_number);
 double real_num_cube(void);
 void data_convert(unsigned int days);
 void time_convert(unsigned int second);
 void display_letter();
+void test(void);
+void inc_dec(void);
 
 int main(void)
 {
@@ -24,10 +26,11 @@ int main(void)
 	// time_convert(489756322);
 	float real_num = 23.36f;
 
-	num_after((int)real_num);
-	num_after(100);
-
-	display_letter();
+	// num_after((int)real_num);
+	// num_after(100);
+	test();
+	// display_letter();
+	inc_dec();
 	
 	return 0;
 
@@ -114,4 +117,26 @@ void display_letter()
 		printf("%c --> %c\n", letter, letter - 32);	
 		letter++;
 	}
+}
+
+void test()
+{
+	int value;
+
+	value = 3 / 5 * 100;
+
+	printf("value is %d\n", value);
+
+}
+
+void inc_dec()
+{
+	int num = 10;
+
+	printf("num value:\n");
+	printf("%d\n", ++num);
+	printf("%d\n", num++);	
+	printf("%d\n", num--);
+	printf("%d\n", num);
+
 }
