@@ -10,19 +10,40 @@
 #define SEC_PER_MINUTE 60
 
 void add10();	// function prototype
+void num_after(int start_number);
 double real_num_cube(void);
 void data_convert(unsigned int days);
 void time_convert(unsigned int second);
+void display_letter();
 
 int main(void)
 {
 	// add10();
 	// printf("cube is %.3f\n", real_num_cube());
-	data_convert(120478);
-	time_convert(489756322);
+	// data_convert(120478);
+	// time_convert(489756322);
+	float real_num = 23.36f;
+
+	num_after((int)real_num);
+	num_after(100);
+
+	display_letter();
 	
 	return 0;
 
+}
+
+void num_after(int start_number)
+{
+	int end_number = start_number + DISTANCE;
+
+	while (start_number <= end_number)
+	{
+		printf("%d ", start_number);
+		start_number++;
+	}
+
+	printf("\n");
 }
 
 void add10()
@@ -80,4 +101,17 @@ void time_convert(unsigned int second)
 
 	printf("%u second:%uh%um%u\n", second, hour, minute, sec);
 
+}
+
+void display_letter()
+{
+	char letter = 'a';
+	
+	printf("All alphabet table:\n");
+
+	while (letter <= 'z')
+	{
+		printf("%c --> %c\n", letter, letter - 32);	
+		letter++;
+	}
 }

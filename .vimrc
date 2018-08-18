@@ -2,7 +2,7 @@
 
 call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
-Plug 'iamcco/dict.vim'			" youdao translation
+" Plug 'iamcco/dict.vim'			" youdao translation
 Plug 'Raimondi/delimitMate'
 
 call plug#end()

@@ -6,7 +6,7 @@ sudo apt install -y tmux
 
 cp -v ./.gitconfig ~
 cp -v ./.vimrc ~
-cp -v ./.tmux.config ~
+cp -v ./.tmux.conf ~
 cp -v ./.gdbinit ~
 
 # alias
