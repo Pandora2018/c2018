@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'iamcco/dict.vim'			" youdao translation
 Plug 'Raimondi/delimitMate'
+Plug 'sickill/vim-monokai'
 
 call plug#end()
 
