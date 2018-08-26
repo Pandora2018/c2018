@@ -4,7 +4,6 @@ call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'iamcco/dict.vim'			" youdao translation
 Plug 'Raimondi/delimitMate'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
 

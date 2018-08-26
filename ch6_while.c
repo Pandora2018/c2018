@@ -16,7 +16,7 @@ int main(void)
 
 void not_numeral_postion(void)
 {
-	/* the funtion providing skip input area all numeral and space character,and reading a character */
+	// the funtion providing skip input area all numeral and space character,and reading a character
 
 	long int numeral;
 	char letter;
