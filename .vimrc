@@ -124,7 +124,7 @@ set guitablabel=%{ShortTabLabel()}
 	iabbrev seg segment
 " }}}
 
-" mydiff{{{
+" mydiff {{{
 function! MyDiff()
   let opt = '-a --binary '
   if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
@@ -139,8 +139,8 @@ function! MyDiff()
 endfunction
 " }}}
 
-"NERD_commenter {{{
-"NERD_commenter插件方法:
+" NERD_commenter {{{
+" NERD_commenter插件方法:
 "\cc 注释当前行和选中行
 "\c<空格> 如果被选区域有部分被注释，则对被选区域执行取消注释操作，其它情况执行反转注释操作
 "\cm 对被选区域用一对注释符进行注释，前面的注释对每一行都会添加注释
@@ -157,7 +157,7 @@ let g:NERDSpaceDelims=1
 " }}}
 
 " neocomplete {{{
-"Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
