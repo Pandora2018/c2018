@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 " Plug 'iamcco/dict.vim'			" youdao translation
 Plug 'Raimondi/delimitMate'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tomasr/molokai'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -34,7 +36,7 @@ call plug#end()
 	" 设置 alt 键不映射到菜单栏
 	set winaltkeys=no
 	syntax on                   " 语法高亮
-	colorscheme zellner			" 主题
+	colorscheme molokai			" 主题
 	set autoindent              " 自动缩进" 
 	set autowrite               " 自动保存文件"
 	set smartindent             " 智能对齐方式
@@ -137,3 +139,6 @@ function! MyDiff()
 endfunction
 " }}}
 
+"nerdcommenter{{{
+let g:NERDSpaceDelims=1
+"}}}
