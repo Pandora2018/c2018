@@ -139,7 +139,7 @@ function! MyDiff()
 endfunction
 " }}}
 
-"NERD_commenter Config{{
+"NERD_commenter Config {{{
 "NERD_commenter插件方法:
 "\cc 注释当前行和选中行
 "\c<空格> 如果被选区域有部分被注释，则对被选区域执行取消注释操作，其它情况执行反转注释操作
