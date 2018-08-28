@@ -3,6 +3,7 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
 
 void show_alphabet(void);
 void compare(void);
@@ -10,9 +11,9 @@ void display_ansii(void);
 
 int main(void)
 {
-	// show_alphabet();	
+	show_alphabet();	
 	// compare();
-	display_ansii();
+	// display_ansii();
 
 	return 0;
 
@@ -21,9 +22,13 @@ int main(void)
 void show_alphabet(void)
 {
 	char letter = 'A';
+	bool compare_result = (letter <= 'Z');
 
-	while (letter <= 'Z')
-		printf("%c ", letter++);	
+	while (compare_result)
+	{
+		printf("%c ", letter);	
+		compare_result = (++letter <= 'Z');
+	}
 	
 	printf("\n");
 }
@@ -45,7 +50,10 @@ void display_ansii(void)
 	int id = 127;
 	
 	while (id)
-		printf("%c ", id--);
+	{
+		printf("%d:%c ", id, id);
+		id--;
+	}
 
 	printf("\n");
 
