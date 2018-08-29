@@ -7,8 +7,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
-Plug 'garbas/vim-snipmate'			; code block
-Plug 'powerline/powerline'		 	; statusline	
 
 call plug#end()
 
