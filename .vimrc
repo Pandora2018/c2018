@@ -7,6 +7,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
+Plug 'hugsy/gef'				" gdb config
 
 call plug#end()
 
