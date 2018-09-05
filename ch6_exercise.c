@@ -8,7 +8,7 @@ void letters(void);
 void show_$(void);
 void show_letter(void);
 void show_alph(void);
-void pyramid_alphabet(void);
+void print_pyramid_alphabet(void);
 
 int main(void)
 {
@@ -16,7 +16,7 @@ int main(void)
 	// show_$();
 	// show_letter();
 	// show_alph();
-	pyramid_alphabet();
+	print_pyramid_alphabet();
 
 	return 0;
 }
@@ -86,12 +86,25 @@ void show_alph(void)
 	}
 }
 
-void pyramid_alphabet(void)
+void print_pyramid_alphabet(void)
 {
 	char alph;
-
+	int line, start, i, j;	/* start means space start postion */
+	
+	printf("please enter a capital:");
 	scanf("%c", &alph);
 
+	for (line = 0; line <= alph - 'A'; line++)
+	{
+		for (start = 0; start <= alph - 'A' - line; start++)
+			printf(" ");
 
+		for (i = 0; i <= line; i++)
+			printf("%c", 'A' + i);
 
+		for (j = line - 1; j >= 0; j--)
+			printf("%c", 'A' + j);
+
+		printf("\n");
+	}
 }
