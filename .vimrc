@@ -118,10 +118,11 @@ set guitablabel=%{ShortTabLabel()}
 " }}}
 
 " Keywords {{{
-	iabbrev main int main(void)
-	iabbrev string String
+	iabbrev main int main(void)<CR>
+    "iabbrev string String
 	iabbrev adt ADT
 	iabbrev seg segment
+    iabbrev io #include <stdio.h><CR>
 " }}}
 
 " mydiff {{{
