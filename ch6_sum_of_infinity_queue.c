@@ -8,14 +8,30 @@ int main(void)
 	int counts;
 
 	printf("enter counts:");
+	scanf("%d", &counts);
 		
-	while (scanf("%d",&counts), counts > 0)
+	while (counts > 0)
+	// while (scanf("%d",&counts), counts > 0)
 	{
 		double total = calc_queue(counts);
 		printf("result:%.10f\n", total);
 		printf("\n");
 		printf("enter counts:");
+		scanf("%d", &counts);
 	}
+
+	/* do
+	{
+		printf("enter counts:");
+		scanf("%d", &counts);
+
+		if (counts <= 0) break;
+		
+		double total = calc_queue(counts);
+		printf("result:%f\n", total);
+
+		printf("\n");
+	} while (counts > 0); */
 	
 	printf("Done!\n");
 
