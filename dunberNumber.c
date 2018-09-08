@@ -16,10 +16,10 @@ int lookDunberFriends(void)
 {
 	int weeks = 0, friends;
 
-	printf("You friends number(>1):");
+	printf("You friends number(>3):");
 	scanf("%d", &friends);
 
-	while (friends <= 150)
+	while ( friends > 3 & friends <= 150)
 	{
 		weeks++;
 		friends = (friends - weeks) * 2;
