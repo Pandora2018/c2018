@@ -7,6 +7,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'		" Insert or delete brackets, parens, quotes in pair.
+Plug 'tomasr/molokai'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'bronson/vim-trailing-whitespace'	" This plugin causes all trailing whitespace to be highlighted in red.
+
 
 call plug#end()
 
@@ -266,4 +270,48 @@ let g:AutoPairsFlyMode = 0
 " 启用飞行模式，默认为0。
 let g:AutoPairsMultilineClose = 1
 " 启用跳出多行括号对，默认为1，为0则只能跳出同一行的括号。
-"}}}
+" }}}
+
+" molokai {{{
+" If you prefer the scheme to match the original monokai background color, put this in your .vimrc file:
+let g:molokai_original = 1
+" There is also an alternative scheme under development for color terminals which attempts to bring the 256 color version as close as possible to the the default (dark) GUI version. To access, add this to your .vimrc:
+" let g:rehash256 = 1
+" }}}
+
+" rainbow_parentheses {{{
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+" Commands:
+" :RainbowParenthesesToggle       " Toggle it on/off
+" :RainbowParenthesesLoadRound    " (), the default when toggling
+" :RainbowParenthesesLoadSquare   " []
+" :RainbowParenthesesLoadBraces   " {}
+" :RainbowParenthesesLoadChevrons " <>
+" }}}
+
+" trailing-whitespace {{{
+map <leader><space> :FixWhitespace<cr>	" \+space去掉末尾空格
+" }}}
