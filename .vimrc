@@ -7,10 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'		" Insert or delete brackets, parens, quotes in pair.
-Plug 'tomasr/molokai'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'bronson/vim-trailing-whitespace'	" This plugin causes all trailing whitespace to be highlighted in red.
-
 
 call plug#end()
 
@@ -41,7 +38,7 @@ call plug#end()
 	set winaltkeys=no
 	syntax on                   " 语法高亮
 	colorscheme koehler			" 主题
-	set autoindent              " 自动缩进" 
+	set autoindent              " 自动缩进"
 	set autowrite               " 自动保存文件"
 	set smartindent             " 智能对齐方式
 	set ignorecase smartcase    " 智能忽略大小写"
@@ -72,7 +69,7 @@ call plug#end()
 " }}}
 
 " backup {{{
-	" set backup 
+	" set backup
 	" set backupext=.bak
 	" set backupdir=e:\Vim\bak
 " }}}
@@ -125,7 +122,7 @@ set guitablabel=%{ShortTabLabel()}
 	nmap <leader>fp :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
 	" 切换Buffer
 	nnoremap <C-right> :bn<CR>
-	nnoremap <C-left> :bp<CR>	
+	nnoremap <C-left> :bp<CR>
 " }}}
 
 " Keywords {{{
@@ -272,13 +269,6 @@ let g:AutoPairsMultilineClose = 1
 " 启用跳出多行括号对，默认为1，为0则只能跳出同一行的括号。
 " }}}
 
-" molokai {{{
-" If you prefer the scheme to match the original monokai background color, put this in your .vimrc file:
-let g:molokai_original = 1
-" There is also an alternative scheme under development for color terminals which attempts to bring the 256 color version as close as possible to the the default (dark) GUI version. To access, add this to your .vimrc:
-" let g:rehash256 = 1
-" }}}
-
 " rainbow_parentheses {{{
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -298,7 +288,7 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'DarkOrchid3'],
     \ ['red',         'firebrick3'],
     \ ]
-let g:rbpt_max = 16
+let g:rbpt_max = 40
 let g:rbpt_loadcmd_toggle = 0
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -310,8 +300,4 @@ au Syntax * RainbowParenthesesLoadBraces
 " :RainbowParenthesesLoadSquare   " []
 " :RainbowParenthesesLoadBraces   " {}
 " :RainbowParenthesesLoadChevrons " <>
-" }}}
-
-" trailing-whitespace {{{
-map <leader><space> :FixWhitespace<cr>	" \+space去掉末尾空格
 " }}}
