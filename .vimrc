@@ -127,13 +127,13 @@ set guitablabel=%{ShortTabLabel()}
 
 " Keywords {{{
     " iabbrev string String
-	iabbrev adt ADT
-	iabbrev seg segment
+	" iabbrev adt ADT
+	" iabbrev seg segment
 	" C lanuage abbr
 	iabbrev main int main(void)<CR>{<CR>return 0;}
-    iabbrev #io #include <stdio.h><CR>
-	iabbrev #is #include <string.h><CR>
-	iabbrev #im #include <math.h><CR>
+	" iabbrev #io #include <stdio.h><CR>
+	" iabbrev #is #include <string.h><CR>
+	" iabbrev #im #include <math.h><CR>
 " }}}
 
 " mydiff {{{
