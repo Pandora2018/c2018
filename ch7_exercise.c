@@ -1,10 +1,12 @@
 #include <stdio.h>
 
 void guess(void);
+void char_to_ascii(void);
 
 int main(void)
 {
-	guess();
+	/* guess(); */
+	char_to_ascii();
 	return 0;
 }
 
@@ -30,4 +32,20 @@ void guess(void)
 	printf("space_num times were %d\n", space_num);
 	printf("line_num times were %d\n", line_num);
 	printf("other_num times were %d\n", other_num);
+}
+
+
+void char_to_ascii(void)
+{
+	char ch;
+
+	printf("enter some char:\n");
+	
+	for (int i = 1; (ch = getchar()) != '#'; i++)
+	{
+		printf("%c,%d  ", ch, ch);
+
+		if (i % 8 == 0)
+			putchar('\n');
+	}
 }
