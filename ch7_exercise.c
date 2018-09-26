@@ -1,14 +1,17 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 void guess(void);
 void char_to_ascii(void);
 void calc_odd_even(void);
+void ei_cnt(void);
 
 int main(void)
 {
 	/* guess(); */
 	/* char_to_ascii(); */
-	calc_odd_even();
+	// calc_odd_even();
+	ei_cnt();
 
 	return 0;
 }
@@ -88,4 +91,28 @@ void calc_odd_even(void)
 		printf("odd number :%d,s_odd:%ld,average:%.2f\n", c_odd, s_odd, 1.0 * s_odd / c_odd);
 		printf("even number:%d,sum even:%ld,average:%.2f\n", c_even, s_even, 1.0 * s_even / c_even);
 
+}
+
+
+/* ei character count */
+void ei_cnt(void)
+{
+	int count = 0;
+	char ch, prev;
+
+	printf("enter some words to screen:\n");
+	
+	while ((ch = getchar()) != '\n')
+	{
+		if ('e' == ch)
+		{
+			prev = ch;
+			continue;
+		}
+
+		if ('e' == prev && 'i' == ch)
+			count++;
+	}
+
+	printf("\'ei\' character has %d times.\n", count);
 }
