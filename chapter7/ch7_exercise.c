@@ -5,13 +5,19 @@ void guess(void);
 void char_to_ascii(void);
 void calc_odd_even(void);
 void ei_cnt(void);
+void isprime(int num);
 
 int main(void)
 {
 	/* guess(); */
 	/* char_to_ascii(); */
 	// calc_odd_even();
-	ei_cnt();
+	// ei_cnt();
+	int n;
+
+	printf("enter a integer:\n");
+	scanf("%d", &n);
+	isprime(n);
 
 	return 0;
 }
@@ -115,4 +121,33 @@ void ei_cnt(void)
 	}
 
 	printf("\'ei\' character has %d times.\n", count);
+}
+
+
+void isprime(int num)
+{
+	// flag is true  to num is prime,either num is composite
+	bool flag;
+	int i, j;
+	int cnt = 0;
+
+	for (i = 1; i <= num; i++)
+	{
+		flag = true;
+
+		for (j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+				flag = false;
+		}
+
+		if (flag && i != 1)
+		{
+			cnt++;
+			printf("%d ", i);
+		}
+	}
+	
+	putchar('\n');
+	printf("%d prime coumt:%d", num, cnt);
 }
