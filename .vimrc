@@ -64,8 +64,8 @@ call plug#end()
 	" 更多高亮颜色设置, 可以:h highlight 查看manual
 	" set cursorcolumn  	" or set cuc 设置光标所在的列
 	" highlight CursorColumn cterm=NONE ctermbg=blue ctermfg=NONE guibg=NONE guifg=NONE
-	set cursorline    	"or set cul 设置光标所在的行
-	highlight CursorLine cterm=NONE ctermbg=gray ctermfg=NONE guibg=NONE guifg=NONE
+	" set cursorline    	"or set cul 设置光标所在的行
+	" highlight CursorLine cterm=NONE ctermbg=gray ctermfg=NONE guibg=NONE guifg=NONE
 " }}}
 
 " backup {{{
