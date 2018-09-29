@@ -37,7 +37,7 @@ call plug#end()
 	" 设置 alt 键不映射到菜单栏
 	set winaltkeys=no
 	syntax on                   " 语法高亮
-	colorscheme koehler			" 主题
+	colorscheme koehler	    " 主题
 	set autoindent              " 自动缩进"
 	set autowrite               " 自动保存文件"
 	set smartindent             " 智能对齐方式
@@ -46,8 +46,7 @@ call plug#end()
 	" 分割出来的窗口位于当前窗口下边/右边
 	set splitbelow
 	set splitright
-	set nu                		" 显示行号
-	set ruler                   " 显示当前光标的位置
+	set ruler                   	" 显示当前光标的位置
 	" set hlsearch          	" 高亮显示
 	set incsearch         		" 实时显示查找的内容
 	set wrapscan        		" 在文件结尾处停止查找
@@ -66,6 +65,15 @@ call plug#end()
 	" highlight CursorColumn cterm=NONE ctermbg=blue ctermfg=NONE guibg=NONE guifg=NONE
 	" set cursorline    	"or set cul 设置光标所在的行
 	" highlight CursorLine cterm=NONE ctermbg=gray ctermfg=NONE guibg=NONE guifg=NONE
+" }}}
+
+" line number {{{
+set nu                		" 显示行号
+augroup relative_numbser
+	autocmd!
+	autocmd InsertEnter * :set norelativenumber
+ 	autocmd InsertLeave * :set relativenumber	" 显示相对行号
+augroup END
 " }}}
 
 " backup {{{
