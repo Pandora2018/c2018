@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'		" Insert or delete brackets, parens, quotes in pair.
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'encody/nvim'
 
 call plug#end()
 
