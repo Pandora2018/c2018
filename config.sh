@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# install necessary software
+# install software
 sudo apt install -y tmux
+sudo apt install -y bc    # An arbitrary precision calculator language
 # sudo apt install -y gdb
 
 cp -v ./.gitconfig ~
