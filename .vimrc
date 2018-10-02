@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'		" Insert or delete brackets, parens, quotes in pair.
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'nine2/vim-copyright'		" vim-copyright is a plug for your file to add/update copyright by bbxytl.
 
 call plug#end()
 
@@ -311,4 +312,15 @@ au Syntax * RainbowParenthesesLoadBraces
 " :RainbowParenthesesLoadSquare   " []
 " :RainbowParenthesesLoadBraces   " {}
 " :RainbowParenthesesLoadChevrons " <>
+" }}}
+
+" copyright {{{
+" use :CopyrightAdd to add copyright for your file.
+" use :CopyrightUpdate to update copyright.
+nmap <leader>ra :CopyrightAdd<CR>
+nmap <leader>ru :CopyrightUpdate<CR>
+let g:file_copyright_name = "Pandora"
+let g:file_copyright_email = "pandora@github.com"
+" add the config to auto add copyright to your file
+let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 'h', 'hpp', 'c', 'cpp', 'java']
 " }}}
