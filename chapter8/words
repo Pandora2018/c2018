@@ -1,0 +1,51 @@
+							*:ec* *:echo*
+:ec[ho] {expr1} ..	Echoes each {expr1}, with a space in between.  The
+			first {expr1} starts on a new line.
+			Also see |:comment|.
+			Use "\n" to start a new line.  Use "\r" to move the
+			cursor to the first column.
+			Uses the highlighting set by the |:echohl| command.
+			Cannot be followed by a comment.
+			Example: >
+		:echo "the value of 'shell' is" &shell
+<							*:echo-redraw*
+			A later redraw may make the message disappear again.
+			And since Vim mostly postpones redrawing until it's
+			finished with a sequence of commands this happens
+			quite often.  To avoid that a command from before the
+			":echo" causes a redraw afterwards (redraws are often
+			postponed until you type something), force a redraw
+			with the |:redraw| command.  Example: >
+		:new | redraw | echo "there is a new window"
+<
+							*:echon*
+:echon {expr1} ..	Echoes each {expr1}, without anything added.  Also see
+			|:comment|.
+			Uses the highlighting set by the |:echohl| command.
+			Cannot be followed by a comment.
+			Example: >
+				:echon "the value of 'shell' is " &shell
+<
+			Note the difference between using ":echo", which is a
+			Vim command, and ":!echo", which is an external shell
+			command: >
+		:!echo %		--> filename
+<			The arguments of ":!" are expanded, see |:_%|. >
+		:!echo "%"		--> filename or "filename"
+<			Like the previous example.  Whether you see the double
+			quotes or not depends on your 'shell'. >
+		:echo %			--> nothing
+<			The '%' is an illegal character in an expression. >
+		:echo "%"		--> %
+<			This just echoes the '%' character. >
+		:echo expand("%")	--> filename
+<			This calls the expand() function to expand the '%'.
+
+							*:echoh* *:echohl*
+:echoh[l] {name}	Use the highlight group {name} for the following
+			|:echo|, |:echon| and |:echomsg| commands.  Also used
+			for the |input()| prompt.  Example: >
+		:echohl WarningMsg | echo "Don't panic!" | echohl None
+<			Don't forget to set the group back to "None",
+			otherwise all following echo's will be highlighted.
+

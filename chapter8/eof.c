@@ -11,7 +11,6 @@
 # ====================================================*/
 
 #include <stdio.h>
-#include <ctype.h>
 
 int main(void)
 {
@@ -23,24 +22,11 @@ int main(void)
 		if (ch == '\n')
 			cnt++;
 
-		putchar(ch);
+		// putchar(ch);
 	}
 
-	/* while (1)
-	{
-		ch = getchar();
-
-		if (isalpha(ch))
-			putchar(ch);
-		else if (isdigit(ch))
-			printf("%d", ch);
-		else if (ch == EOF)
-			break;
-		else
-			printf("\n");
-	} */
-
-	printf("------\n");
+	// printf("------\n");
 	printf("\\n number:%d\n", cnt);
+
 	return 0;
 }
