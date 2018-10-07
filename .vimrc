@@ -8,7 +8,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 Plug 'jiangmiao/auto-pairs'		" Insert or delete brackets, parens, quotes in pair.
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'nine2/vim-copyright'		" vim-copyright is a plug for your file to add/update copyright by bbxytl.
+" vim-copyright is a plug for your file to add/update copyright by bbxytl.
+Plug 'nine2/vim-copyright'
+" Code snippets engine for Vim, And snippets library. Write codes in a smooth, quick and comfortable way.
+" Plug 'drmingdrmer/xptemplate'
 
 call plug#end()
 
