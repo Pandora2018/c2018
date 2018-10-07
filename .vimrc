@@ -2,11 +2,13 @@
 
 call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
-" Plug 'iamcco/dict.vim'		" youdao translation
+" youdao translation
+" Plug 'iamcco/dict.vim'
 " Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
-Plug 'jiangmiao/auto-pairs'		" Insert or delete brackets, parens, quotes in pair.
+" Insert or delete brackets, parens, quotes in pair.
+Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
 " vim-copyright is a plug for your file to add/update copyright by bbxytl.
 Plug 'nine2/vim-copyright'
