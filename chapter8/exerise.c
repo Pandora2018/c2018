@@ -14,13 +14,20 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+#define MAX 100
+
 void charcnt(void);
 void avg_char(void);
+int guess(void);
+
 
 int main(void)
 {
 	// charcnt();
-	avg_char();
+	// avg_char();
+	int last = guess();
+
+	printf("you guess is sucessful,it's %d\n", last);
 
 	return 0;
 }
@@ -68,4 +75,16 @@ void avg_char(void)
 	printf("word count : %d\n", word_cnt);
 	printf("char count : %d\n", char_cnt);
 	printf("each word average length: %.2f\n", 1.0 * char_cnt / word_cnt);
+}
+
+
+int guess(void)
+{
+	int value;
+	
+	printf("enter a integer:");
+
+	
+
+	return value;
 }
