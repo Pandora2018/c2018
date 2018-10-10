@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : exerise.c
-#   Last Modified : 2018-10-10 13:46
+#   Last Modified : 2018-10-10 14:47
 #   Describe      : this is chapter8 exerise
 #
 # ====================================================*/
@@ -13,8 +13,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
-
-#define MAX 100
 
 void charcnt(void);
 void avg_char(void);
