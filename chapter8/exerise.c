@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : exerise.c
-#   Last Modified : 2018-10-09 12:59
+#   Last Modified : 2018-10-10 13:46
 #   Describe      : this is chapter8 exerise
 #
 # ====================================================*/
@@ -18,16 +18,12 @@
 
 void charcnt(void);
 void avg_char(void);
-int guess(void);
 
 
 int main(void)
 {
 	// charcnt();
-	// avg_char();
-	int last = guess();
-
-	printf("you guess is sucessful,it's %d\n", last);
+	avg_char();
 
 	return 0;
 }
@@ -75,16 +71,4 @@ void avg_char(void)
 	printf("word count : %d\n", word_cnt);
 	printf("char count : %d\n", char_cnt);
 	printf("each word average length: %.2f\n", 1.0 * char_cnt / word_cnt);
-}
-
-
-int guess(void)
-{
-	int value;
-	
-	printf("enter a integer:");
-
-	
-
-	return value;
 }
