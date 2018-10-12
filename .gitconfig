@@ -3,3 +3,5 @@
 	email = pandora@qq.com
 [core]
 	editor = vim
+[color]
+    	ui = true
