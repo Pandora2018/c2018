@@ -10,6 +10,7 @@ git clone https://github.com/github/gitignore ~/gitignore
 
 cp -v ~/gitignore/C.gitignore .
 mv C.gitignore .gitignore
+echo -e "\n" >> .gitconfig
 echo "*.swp" >> .gitignore
 
 cp -v ./.gitconfig ~
