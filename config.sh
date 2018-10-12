@@ -1,17 +1,10 @@
 #!/bin/sh
 
-# install software
 sudo apt install -y tmux
-sudo apt install -y bc    # An arbitrary precision calculator language
+# An arbitrary precision calculator language
+sudo apt install -y bc
+# gdb debug
 # sudo apt install -y gdb
-
-# A collection of useful .gitignore templates
-git clone https://github.com/github/gitignore ~/gitignore
-
-cp -v ~/gitignore/C.gitignore .
-mv C.gitignore .gitignore
-echo -e "\n" >> .gitconfig
-echo "*.swp" >> .gitignore
 
 cp -v ./.gitconfig ~
 cp -v ./.vimrc ~
