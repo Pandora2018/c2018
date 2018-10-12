@@ -5,6 +5,13 @@ sudo apt install -y tmux
 sudo apt install -y bc    # An arbitrary precision calculator language
 # sudo apt install -y gdb
 
+# A collection of useful .gitignore templates
+git clone https://github.com/github/gitignore ~/gitignore
+
+cp -v ~/gitignore/C.gitignore .
+mv C.gitignore .gitignore
+echo "*.swp" >> .gitignore
+
 cp -v ./.gitconfig ~
 cp -v ./.vimrc ~
 cp -v ./.tmux.conf ~
@@ -12,7 +19,5 @@ cp -v ./.gdbinit ~
 
 # alias
 alias la='ls -lAh'
-alias gitpush='git push https://github.com/pandora2018/c2018.git'
-alias gitclone='git clone https://github.com/pandora2018/c2018.git'
 
 echo "All operator running finish......"
