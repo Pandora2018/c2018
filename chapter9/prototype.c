@@ -13,8 +13,7 @@
 #include <stdio.h>
 
 void calc(void);
-/* int imax(int, int);  // old function declation */
-
+/* int imax(int, int); */
 int imax(int a, int b) { return (a > b ? a : b); }
 
 
@@ -29,13 +28,6 @@ int main(void)
 
 	return 0;
 }
-
-
-/* old function definite */
-/* int imax(int n, int m)
-{
-	return (n > m ? n : m);
-} */
 
 
 void calc(void)
