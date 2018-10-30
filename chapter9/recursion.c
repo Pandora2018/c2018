@@ -5,19 +5,19 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : recursion.c
-#   Last Modified : 2018-10-23 12:21
+#   Last Modified : 2018-10-30 18:57
 #   Describe      : recursion demo
 #
 # ====================================================*/
 
 #include <stdio.h>
-
-void up_and_down(int);
-
+#include "demo.h"
 
 int main(void)
 {
-	up_and_down(1);
+	printf("my name is %s,I'm %d years old\n", NAME, AGE);
+	/* up_and_down(1); */
+	printf("10th fibonacci:%.f\n", fibonacci(10));
 
 	return 0;
 }
