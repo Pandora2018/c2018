@@ -5,13 +5,14 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : exercise.h
-#   Last Modified : 2018-11-02 09:28
+#   Last Modified : 2018-11-02 19:28
 #   Describe      : chapter_10 head file
 #
 # ====================================================*/
 
 void max(int, int, int);
 void chline(char, int, int);
-
+int position(char);
+double power(double, int);
 
 #define SPACE ' '

@@ -4,13 +4,14 @@
 #
 #   Author        : Pandora
 #   Email         : pandora@github.com
-#   File Name     : exercise.c
-#   Last Modified : 2018-11-02 09:28
+#   File Name     : exercise.c 
+#   Last Modified : 2018-11-02 18:23
 #   Describe      : exercise
 #
 # ====================================================*/
 
 #include <stdio.h>
+#include <ctype.h>
 #include "exercise.h"
 
 
@@ -22,7 +23,7 @@ int main(void)
 
 	/* max(a, b, c); */
 	
-	char ch;
+	/* char ch;
 	int i, j;
 	
 	printf("Please input a character:");
@@ -30,7 +31,23 @@ int main(void)
 	printf("Please input two integers:");
 	scanf("%d %d", &i, &j);
 
-	chline(ch, i, j);
+	chline(ch, i, j); */
+
+	int ch, location;
+	printf("Please input some character:\n");
+
+	while((ch = getchar()) != EOF){
+
+		if(!isalpha(ch)) continue;
+
+		location = position(ch);
+
+		printf("\'%c\' character position : %d\n", ch, location);
+
+		printf("Please input next character:\n");
+	}
+
+	printf("Done!\n");
 
 	return 0;
 }
@@ -67,4 +84,16 @@ void chline(char ch, int i, int j)
 	}
 
 	return;
+}
+
+
+int position(char ch)
+{
+	int location;
+	
+	char tmp = islower(ch) ? 'a' : 'A';
+
+	location = ch - tmp + 1;
+
+	return location;
 }
