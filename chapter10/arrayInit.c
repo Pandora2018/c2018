@@ -18,19 +18,13 @@ int main(void)
 {
 	int days[MONTH] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
-	// designate initializer
-	/* int days[] = {[10] = 30, 31}; */
-
-	int index, sum = 0;
+	int index;
 
 	for (index = 1; index <= sizeof(days) / sizeof(int); index++){
-		printf("%02d month has %d days\n", index, days[index - 1]);
-		sum += days[index - 1];
-		printf("%02d month after days of a year : %d\n", index, sum);
-		putchar('\n');
+		;
 	}
 
-	/* indexOver(); */
+	indexOver();
 
 	return 0;
 }
