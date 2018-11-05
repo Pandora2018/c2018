@@ -60,7 +60,7 @@ call plug#end()
 	set autowrite         		" 自动保存文件"
 	set lcs=tab:\|\
 	set laststatus=1
-	set linespace=1				" 行间距
+	set linespace=3				" 行间距
 	set noshowmode				" 在状态栏上不显示vim当前的模式
 	set fillchars=vert:.		" 分屏竖线
 	nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>		" 空格控制打开或关闭折叠

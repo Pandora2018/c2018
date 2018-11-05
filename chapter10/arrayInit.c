@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : arrayInit.c
-#   Last Modified : 2018-11-04 13:30
+#   Last Modified : 2018-11-05 14:55
 #   Describe      :
 #
 # ====================================================*/
@@ -17,14 +17,41 @@
 int main(void)
 {
 	int days[MONTH] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	
+
 	int index;
 
-	for (index = 1; index <= sizeof(days) / sizeof(int); index++){
-		;
+	// two demension
+	float price[3][4] = {
+		{3.1, 3.2},
+		{2.0},
+		{1.0}
+	};	
+
+	printf("%4d%4d%4d%4d\n", 1, 2, 3, 4);
+
+	for (int i = 0; i < sizeof(price) / sizeof(price[0]); i++){
+		printf("%d| ", i + 1);
+
+		for (int j = 0; j < sizeof(price[i]) / sizeof(price[i][0]); j++)
+			printf("%.1f ", price[i][j]);
+
+		putchar('\n');
 	}
 
-	indexOver();
+	float rain[2][3][4] = {
+		{
+			{1.0,2.0,3.0,4.0},
+			{1.0,2.0,3.0,4.0},
+			{1.0,2.0,3.0,4.0},
+		},
+		{
+			{1.0,2.0,3.0,4.0},
+			{1.0,2.0,3.0,4.0},
+			{1.0,2.0,3.0,4.0},
+		},
+	};
+
+	// indexOver();
 
 	return 0;
 }
