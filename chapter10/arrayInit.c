@@ -27,13 +27,15 @@ int main(void)
 		{1.0}
 	};	
 
-	printf("%4d%4d%4d%4d\n", 1, 2, 3, 4);
+	printf("address of price : %p\n", &price);
+	printf("address of price[0] : %p\n", &price[0]);
+	// printf("%4d%4d%4d%4d\n", 1, 2, 3, 4);
 
 	for (int i = 0; i < sizeof(price) / sizeof(price[0]); i++){
-		printf("%d| ", i + 1);
+		// printf("%d| ", i + 1);
 
 		for (int j = 0; j < sizeof(price[i]) / sizeof(price[i][0]); j++)
-			printf("%.1f ", price[i][j]);
+			printf("[%d][%d] : %p\n", i, j, &price[i][j]);
 
 		putchar('\n');
 	}
