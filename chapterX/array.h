@@ -5,13 +5,15 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : array.h
-#   Last Modified : 2018-11-05 14:56
+#   Last Modified : 2018-11-06 08:58
 #   Describe      :
 #
 # ====================================================*/
 
 #define MONTH 12
 #define SIZE 4
+#define LENGTH 6
 
+double arrSum(double *, double *);
 void indexOver(void);
 

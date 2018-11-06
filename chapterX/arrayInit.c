@@ -28,18 +28,17 @@ int main(void)
 	};	
 
 	printf("address of price : %p\n", &price);
-	printf("address of price[0] : %p\n", &price[0]);
-	// printf("%4d%4d%4d%4d\n", 1, 2, 3, 4);
 
 	for (int i = 0; i < sizeof(price) / sizeof(price[0]); i++){
-		// printf("%d| ", i + 1);
+	printf("address of price[%d] : %p\n", i, &price[i]);
 
 		for (int j = 0; j < sizeof(price[i]) / sizeof(price[i][0]); j++)
 			printf("[%d][%d] : %p\n", i, j, &price[i][j]);
 
 		putchar('\n');
 	}
-
+	
+	// three demension
 	float rain[2][3][4] = {
 		{
 			{1.0,2.0,3.0,4.0},
