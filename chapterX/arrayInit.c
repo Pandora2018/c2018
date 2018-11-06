@@ -27,13 +27,17 @@ int main(void)
 		{1.0}
 	};	
 
+	float * ptr = &price[0][0];
+
 	printf("address of price : %p\n", &price);
+	putchar('\n');
 
 	for (int i = 0; i < sizeof(price) / sizeof(price[0]); i++){
-	printf("address of price[%d] : %p\n", i, &price[i]);
+		printf("address of price[%d] : %p\n", i, price + i);
 
 		for (int j = 0; j < sizeof(price[i]) / sizeof(price[i][0]); j++)
-			printf("[%d][%d] : %p\n", i, j, &price[i][j]);
+			// printf("[%d][%d] : %p\n", i, j, &price[i][j]);
+			printf("[%d][%d] : %p\n", i, j, ptr++);
 
 		putchar('\n');
 	}
