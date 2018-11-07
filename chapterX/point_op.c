@@ -15,16 +15,28 @@
 
 int main(void)
 {
-	float dates[2] = {2.0, 1.0};
-	float moredates[3] = {3.0, 4.0, 5.0};
-	
-	float * p1, * p2, * p3;
-	p1 = p2 = dates;
-	p3 = moredates;
+	float dates[6] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
+	float * ptr1 = dates;
+	float * ptr2 = &dates[2];
 
-	printf("Before:\n*p1 = %.1f, *p2 = %.1f, *p3 = %.1f\n", *p1, *p2, *p3);
-	printf("after:\n*p1++ = %.1f, *(++p2) = %.1f, ++(*p3) = %.1f\n", *p1++, *(++p2), ++(*p3));
-	printf("*p1 = %.1f, *p2 = %.1f, *p3 = %.1f\n", *p1, *p2, *p3);
+	printf("ptr2 - ptr1 = %td\n", ptr2 - ptr1);
+
+	printf("ptr1 addrress:%p\nptr1 : %p\n*ptr1 : %f\n", &ptr1, ptr1, *ptr1);
+
+	ptr1++;;
+
+	printf("ptr1 addrress:%p\nptr1 : %p\n*ptr1 : %f\n", &ptr1, ptr1, *ptr1);
+
+	ptr1--;
+
+	printf("ptr1 addrress:%p\nptr1 : %p\n*ptr1 : %f\n", &ptr1, ptr1, *ptr1);
+
+	*(ptr1 + 1) = 3.0;
+	
+	printf("dates[1] = %f\n", dates[1]);
+	
+	printf("ptr2 addrress:%p\nptr2 + 3 : %p\n*ptr2 : %f\n", &ptr2, ptr2 + 3, *(ptr2 + 3));
+
 
 	return 0;
 }

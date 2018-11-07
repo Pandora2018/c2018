@@ -16,4 +16,4 @@
 
 double arrSum(double *, double *);
 void indexOver(void);
-
+void arinit(int);

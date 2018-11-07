@@ -23,6 +23,7 @@ int main(void)
 
 	printf("box array summary of all element : %.2f\n", answer);
 
+	arinit(10);
 	return 0;
 }
 
@@ -38,4 +39,16 @@ double arrSum(double * start, double * end)
 	}
 
 	return total;
+}
+
+
+void arinit(int length)
+{
+	double ar[length];
+
+	for (int index = 0; index < length; index++)
+		*(ar + index) = index;
+
+	for (int index = 0; index < length; index++)
+		printf("a[%d] = %.2f\n", index, *(ar + index));
 }

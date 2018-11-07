@@ -17,17 +17,20 @@
 int main(void)
 {
 	int num;
-	double value;
 
 	printf("Please input a integer to screen:");
+	int stat = scanf("%d", &num);
+	double value[num];
 
-	while(scanf("%d", &num) == 1){
-		value = fbnacci(num);
-		printf("%dth fibonacci number : %.0f\n", num, value);
-		printf("-----------------------------\n");
-		printf("Please input a integer again:");
+	if (1 == stat)
+	{
+		for (int n = 0; n < num; n++)
+			value[n] = fbnacci(n + 1);
 	}
 
+	for (int index = 0; index < num; index++)
+		printf("%dth fibonacci number : %.f\n", index + 1, value[index]);
+		
 	printf("Done!\n");
 
 	return 0;
