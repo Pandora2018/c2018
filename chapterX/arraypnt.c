@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : arraypnt.c
-#   Last Modified : 2018-11-06 08:57
+#   Last Modified : 2018-11-08 18:49
 #   Describe      :
 #
 # ====================================================*/
@@ -23,12 +23,12 @@ int main(void)
 
 	printf("box array summary of all element : %.2f\n", answer);
 
-	arinit(10);
+	/* arinit(10); */
 	return 0;
 }
 
 
-double arrSum(double * start, double * end)
+double arrSum(const double * start, const double * end)
 {
 	double total = 0;
 

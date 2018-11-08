@@ -14,6 +14,6 @@
 #define SIZE 4
 #define LENGTH 6
 
-double arrSum(double *, double *);
+double arrSum(const double *, const double *);
 void indexOver(void);
 void arinit(int);

@@ -15,28 +15,16 @@
 
 int main(void)
 {
-	float dates[6] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
-	float * ptr1 = dates;
-	float * ptr2 = &dates[2];
+	/* float dates[6] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0}; */
+	const char ch[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+	char c[] = {'A', 'B', 'C', 'D'};
+	char * const cptr1 = c;
 
-	printf("ptr2 - ptr1 = %td\n", ptr2 - ptr1);
+	/* *cptr1 = 'A'; */
+	*(cptr1 + 2) = 'c';
+	/* cptr1++; */
 
-	printf("ptr1 addrress:%p\nptr1 : %p\n*ptr1 : %f\n", &ptr1, ptr1, *ptr1);
-
-	ptr1++;;
-
-	printf("ptr1 addrress:%p\nptr1 : %p\n*ptr1 : %f\n", &ptr1, ptr1, *ptr1);
-
-	ptr1--;
-
-	printf("ptr1 addrress:%p\nptr1 : %p\n*ptr1 : %f\n", &ptr1, ptr1, *ptr1);
-
-	*(ptr1 + 1) = 3.0;
-	
-	printf("dates[1] = %f\n", dates[1]);
-	
-	printf("ptr2 addrress:%p\nptr2 + 3 : %p\n*ptr2 : %f\n", &ptr2, ptr2 + 3, *(ptr2 + 3));
-
+	printf("ch = %c\n", *(cptr1 + 2));
 
 	return 0;
 }
