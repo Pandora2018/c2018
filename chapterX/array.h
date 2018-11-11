@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : array.h
-#   Last Modified : 2018-11-06 08:58
+#   Last Modified : 2018-11-11 20:30
 #   Describe      :
 #
 # ====================================================*/
@@ -17,4 +17,4 @@
 double arrSum(const double *, const double *);
 void indexOver(void);
 void arinit(int);
-void getPoint(float (* )[][4]);
+void getadd(float [][4]);
