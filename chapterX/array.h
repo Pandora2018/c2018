@@ -17,3 +17,4 @@
 double arrSum(const double *, const double *);
 void indexOver(void);
 void arinit(int);
+void getPoint(float (* )[][4]);

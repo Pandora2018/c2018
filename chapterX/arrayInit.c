@@ -18,29 +18,23 @@ int main(void)
 {
 	int days[MONTH] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-	int index;
-
+	int (* p1)[MONTH] = &days;
+	const int (* p2)[MONTH] = p1;
+	
+	int * p3 = days;
+	const int * p4 = p3;
+	// *(p3 + 2) = 21;
+	// printf("days[%d] = %d\n", 3, *(p4 + 2));
+	
 	// two demension
-	float price[3][4] = {
+	float price[3][4] = 
+	{
 		{3.1, 3.2},
 		{2.0},
 		{1.0}
 	};	
 
-	float * ptr = &price[0][0];
-
-	printf("address of price : %p\n", &price);
-	putchar('\n');
-
-	for (int i = 0; i < sizeof(price) / sizeof(price[0]); i++){
-		printf("address of price[%d] : %p\n", i, price + i);
-
-		for (int j = 0; j < sizeof(price[i]) / sizeof(price[i][0]); j++)
-			// printf("[%d][%d] : %p\n", i, j, &price[i][j]);
-			printf("[%d][%d] : %p\n", i, j, ptr++);
-
-		putchar('\n');
-	}
+	getPoint(price);
 	
 	// three demension
 	float rain[2][3][4] =
@@ -60,6 +54,26 @@ int main(void)
 	// indexOver();
 
 	return 0;
+}
+
+void getPoint(float (* ar)[][4])
+{
+	// array's point
+	float (* ptr)[4] = ar;
+
+	printf("address of ar : %p\n", ptr);
+	putchar('\n');
+
+	for (int i = 0; i < sizeof(ar) / sizeof(ar[0]); i++)
+	{
+		printf("address of ar[%d] : %p\n", i, ptr + i);
+
+		for (int j = 0; j < sizeof(ar[i]) / sizeof(ar[i][0]); j++)
+			// printf("[%d][%d] : %p\n", i, j, &ar[i][j]);
+			printf("[%d][%d] : %p\n", i, j, *(ptr + i) + j);
+
+		putchar('\n');
+	}
 }
 
 
