@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : arrayInit.c
-#   Last Modified : 2018-11-05 14:55
+#   Last Modified : 2018-11-12 16:34
 #   Describe      :
 #
 # ====================================================*/
@@ -41,23 +41,21 @@ int main(void)
 		},
 	};
 
-	getadd(price);
+	getadd((float [4][4]) { {0.0}, {0.0} }, 4);
 	// indexOver();
 
 	return 0;
 }
 
-void getadd(float ar[][4])
+void getadd(const float ar[][4], int rows)
 {
 	printf("The first addres : %p\n", ar);
 	putchar('\n');
 
-	// for (int i = 0; i < sizeof(ar) / sizeof(ar[0]); i++)
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < rows; i++)
 	{
 		printf("address of price[%d] : %p\n", i, ar + i);
 
-		// for (int j = 0; j < sizeof(ar[i]) / sizeof(ar[i][0]); j++)
 		for (int j = 0; j < 4; j++)
 			printf("[%d][%d] : %p\n", i, j, *(ar + i) + j);
 

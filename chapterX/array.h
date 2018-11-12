@@ -17,4 +17,4 @@
 double arrSum(const double *, const double *);
 void indexOver(void);
 void arinit(int);
-void getadd(float [][4]);
+void getadd(const float [][4], int);
