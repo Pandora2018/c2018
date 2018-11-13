@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : array.h
-#   Last Modified : 2018-11-11 20:30
+#   Last Modified : 2018-11-13 20:03
 #   Describe      :
 #
 # ====================================================*/
@@ -18,4 +18,5 @@ double arrSum(const double *, const double *);
 void indexOver(void);
 void arinit(int);
 void getadd(const float [][4], int);
-int max(int [], int);
+int max(const int [], int);
+int max_loc(const int [], int);

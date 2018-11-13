@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : findMax.c
-#   Last Modified : 2018-11-13 12:45
+#   Last Modified : 2018-11-13 20:03
 #   Describe      :
 #
 # ====================================================*/
@@ -16,18 +16,18 @@
 
 int main(void)
 {
-	int test[] = {-12, -23, -13, 34, -45, 54, 100, 200, -300};
+	int test[] = {-12, -23, 34, 1000, -45, 5, 875, 234, 400, -300};
 	size_t size = sizeof(test) / sizeof(test[0]);
 	
 	int large = max(test, size);
-	printf("test[%zd] = {-12, -23, -13, 34, -45, 54, 100, 200, -300}\n", size);
-	printf("The \'test\' array maxium value is %d\n", large);
+	int postion = max_loc(test, size);
+	printf("The \'test\' array maxium value is %d,postion is %d\n", large, postion);
 
 	return 0;
 }
 
 
-int max(int ar[], int size)
+int max(const int ar[], int size)
 {
 	int maxium = ar[0];
 
@@ -38,4 +38,22 @@ int max(int ar[], int size)
 	}
 
 	return maxium;
+}
+
+
+int max_loc(const int ar[], int size)
+{
+	int postion = 1;
+	int maxium = ar[0];
+	
+	for (int i = 1; i < size; i++)
+	{
+		if (ar[i] > maxium)
+		{
+			maxium = ar[i];
+			postion = i + 1;
+		}
+	}
+
+	return postion;
 }
