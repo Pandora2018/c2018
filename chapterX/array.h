@@ -18,3 +18,4 @@ double arrSum(const double *, const double *);
 void indexOver(void);
 void arinit(int);
 void getadd(const float [][4], int);
+int max(int [], int);
