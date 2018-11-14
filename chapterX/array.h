@@ -20,3 +20,4 @@ void arinit(int);
 void getadd(const float [][4], int);
 int max(const int [], int);
 int max_loc(const int [], int);
+void min_and_postion(const int *, int *, int);
