@@ -36,15 +36,15 @@ int main(void)
 
 int max(const int ar[], int size)
 {
-	int maxium = ar[0];
+	int maxindex = 0;
 
 	for (int index = 1; index < size; index++)
 	{
-		if (ar[index] > maxium)
-			maxium = ar[index];
+		if (ar[index] > ar[maxindex])
+			maxindex = index;
 	}
 
-	return maxium;
+	return ar[maxindex];
 }
 
 
@@ -70,17 +70,13 @@ void min_and_postion(const int * ar, int * value, int size)
 
 int max_loc(const int ar[], int size)
 {
-	int postion = 1;
-	int maxium = ar[0];
+	int maxindex = 0;
 	
 	for (int i = 1; i < size; i++)
 	{
-		if (ar[i] > maxium)
-		{
-			maxium = ar[i];
-			postion = i + 1;
-		}
+		if (ar[i] > ar[maxindex])
+			maxindex = i;
 	}
 
-	return postion;
+	return maxindex + 1;
 }
