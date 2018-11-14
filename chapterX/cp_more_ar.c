@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : cp_more_ar.c
-#   Last Modified : 2018-11-14 17:44
+#   Last Modified : 2018-11-14 19:37
 #   Describe      :
 #
 # ====================================================*/
@@ -32,8 +32,13 @@ int main(void)
 	
 	putchar('\n');
 
+	/*
+	 * use blow function sulution copy source array to target array, 
+	 * and print target array.
+	 */
 	cp_ar(source, target);
 
+	// print third to fiveth element of so array
 	double so[] = {1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7};
 	double des[3];
 
