@@ -14,7 +14,7 @@
 #include "array.h"
 
 
-int main(void)
+/* int main(void)
 {
 	double source[] = {2.78, 3.14, 1.1, 1000.23, 20.0, 3.6, 45.36, -12.98};
 	size_t size = sizeof(source) / sizeof(source[0]);
@@ -32,7 +32,7 @@ int main(void)
 	sh_arr(target3, target3 + size);
 
 	return 0;
-}
+} */
 
 
 void cp_arr(const double source[], double target[], int size)
