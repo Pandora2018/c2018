@@ -30,3 +30,7 @@ void cp_point(double *, const double *, const double *);
 void sh_arr(const double *, const double *);
 
 void cp_ar(const double (* )[COLS], double (* )[COLS]);
+
+void mkd_arr(int rows, int cols, double ar[rows][cols]);
+void copyd_arr(int rows, int cols, const double source[rows][cols], double target[rows][cols]);
+void shd_arr(int rows, int cols, const double ar[rows][cols]);
