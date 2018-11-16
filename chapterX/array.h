@@ -36,3 +36,9 @@ void copyd_arr(int rows, int cols, const double source[rows][cols], double targe
 void shd_arr(int rows, int cols, const double ar[rows][cols]);
 
 void ard_add(int rows, int cols, const double addend[rows][cols], const double summend[rows][cols], double answer[rows][cols]);
+
+void getd_arr(int rows, int cols, double ar[rows][cols]);
+double ard_avg(int n, double ar[n]);
+double ard_all_avg(int rows, int cols, double ar[rows][cols]);
+double getd_max(int rows, int cols, double ar[rows][cols]);
+double getd_min(int rows, int cols, double ar[rows][cols]);
