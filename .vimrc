@@ -344,5 +344,5 @@ let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 
 " indentLine {{{
 let g:indentLine_color_term = 239
 " where 'c' can be any ASCII character. You can also use one of ¦, ┆, │, ⎸, or ▏ to display more beautiful lines. However, these characters will only work with files whose encoding is UTF-8.
-let g:indentLine_char = 'c'
+" let g:indentLine_char = 'c'
 " }}}
