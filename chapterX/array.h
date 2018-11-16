@@ -13,8 +13,8 @@
 #define MONTH 12
 #define SIZE 4
 #define LENGTH 6
-#define ROWS 3
-#define COLS 4
+#define ROWS 12
+#define COLS 6
 
 double arrSum(const double *, const double *);
 void indexOver(void);

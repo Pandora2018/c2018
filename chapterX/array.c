@@ -1,3 +1,19 @@
+
+/* ====================================================
+#   Copyright (C)2018 All rights reserved.
+#
+#   Author        : Pandora
+#   Email         : pandora@github.com
+#   File Name     : array.c
+#   Last Modified : 2018-11-16 10:08
+#   Describe      : solution double array
+#
+# ====================================================*/
+
+
+#include <stdio.h>
+
+
 // make a double array,element value from 0.0 to (rows - 1) * cols + (cols - 1)
 void mkd_arr(int rows, int cols, double ar[rows][cols])
 {
@@ -33,7 +49,7 @@ void shd_arr(int rows, int cols, const double ar[rows][cols])
 
 	for (i = 0; i < rows; i++){
 		for (j = 0; j < cols; j++)
-			printf("%.2f ", ar[i][j];
+			printf("%.2f ", ar[i][j]);
 	
 		putchar('\n');
 	}
