@@ -56,3 +56,16 @@ void shd_arr(int rows, int cols, const double ar[rows][cols])
 	
 	return;
 }
+
+
+void ard_add(int rows, int cols, const double addend[rows][cols], const double summend[rows][cols], double answer[rows][cols])
+{
+	int i, j;
+
+	for (i = 0; i < rows; i++){
+		for (j = 0; j < cols; j++)
+			answer[i][j] = addend[i][j] + summend[i][j];
+	}
+
+	return;
+}

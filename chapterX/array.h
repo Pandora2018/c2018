@@ -13,8 +13,8 @@
 #define MONTH 12
 #define SIZE 4
 #define LENGTH 6
-#define ROWS 12
-#define COLS 6
+#define ROWS 10
+#define COLS 15
 
 double arrSum(const double *, const double *);
 void indexOver(void);
@@ -34,3 +34,5 @@ void cp_ar(const double (* )[COLS], double (* )[COLS]);
 void mkd_arr(int rows, int cols, double ar[rows][cols]);
 void copyd_arr(int rows, int cols, const double source[rows][cols], double target[rows][cols]);
 void shd_arr(int rows, int cols, const double ar[rows][cols]);
+
+void ard_add(int rows, int cols, const double addend[rows][cols], const double summend[rows][cols], double answer[rows][cols]);
