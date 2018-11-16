@@ -2,9 +2,12 @@
 
 call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
+
 " youdao translation
 " Plug 'iamcco/dict.vim'
+
 " Plug 'Raimondi/delimitMate'
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 
@@ -19,7 +22,7 @@ Plug 'nine2/vim-copyright'
 " Code snippets engine for Vim, And snippets library. Write codes in a smooth, quick and comfortable way.
 " Plug 'drmingdrmer/xptemplate'
 
-A vim plugin to display the indention levels with thin vertical lines 
+" A vim plugin to display the indention levels with thin vertical lines 
 Plug 'Yggdroot/indentLine'
 
 
