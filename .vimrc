@@ -7,13 +7,21 @@ call plug#begin('~/.vim/plugged')
 " Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
+
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
+
 Plug 'kien/rainbow_parentheses.vim'
+
 " vim-copyright is a plug for your file to add/update copyright by bbxytl.
 Plug 'nine2/vim-copyright'
+
 " Code snippets engine for Vim, And snippets library. Write codes in a smooth, quick and comfortable way.
 " Plug 'drmingdrmer/xptemplate'
+
+A vim plugin to display the indention levels with thin vertical lines 
+Plug 'Yggdroot/indentLine'
+
 
 call plug#end()
 
@@ -328,4 +336,10 @@ let g:file_copyright_name = "Pandora"
 let g:file_copyright_email = "pandora@github.com"
 " add the config to auto add copyright to your file
 let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 'h', 'hpp', 'c', 'cpp', 'java']
+" }}}
+
+" indentLine {{{
+let g:indentLine_color_term = 239
+" where 'c' can be any ASCII character. You can also use one of ¦, ┆, │, ⎸, or ▏ to display more beautiful lines. However, these characters will only work with files whose encoding is UTF-8.
+let g:indentLine_char = 'c'
 " }}}
