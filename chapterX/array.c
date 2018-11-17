@@ -151,3 +151,19 @@ double getd_min(int rows, int cols, double ar[rows][cols])
 
 	return ar[x][y];
 }
+
+
+// inverse double array
+void ard_inverse(int n, double ar[n])
+{
+	double tmp;
+	int i, j;
+
+	for (i = n - 1, j = 0; j < (n / 2); i--, j++){
+		tmp = ar[j];
+		ar[j] = ar[i];
+		ar[i] = tmp;
+	}
+
+	return;
+}

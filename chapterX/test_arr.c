@@ -45,6 +45,15 @@ int main(void)
 
 	putchar('\n');
 
+	printf("primary array:\n");
+	shd_arr(rows, cols, test);
+
+	putchar('\n');
+	
+	printf("inverse array:\n");
+	for (int i = 0; i < rows; i++)
+		ard_inverse(cols, *(test + i));
+
 	shd_arr(rows, cols, test);
 
 	return 0;

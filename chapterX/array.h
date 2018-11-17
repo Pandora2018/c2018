@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : array.h
-#   Last Modified : 2018-11-14 18:26
+#   Last Modified : 2018-11-17 09:33
 #   Describe      :
 #
 # ====================================================*/
@@ -42,3 +42,5 @@ double ard_avg(int n, double ar[n]);
 double ard_all_avg(int rows, int cols, double ar[rows][cols]);
 double getd_max(int rows, int cols, double ar[rows][cols]);
 double getd_min(int rows, int cols, double ar[rows][cols]);
+
+void ard_inverse(int n, double ar[n]);
