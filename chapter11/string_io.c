@@ -4,11 +4,19 @@
 #
 #   Author        : Pandora
 #   Email         : pandora@github.com
-#   File Name     : str.h
-#   Last Modified : 2018-11-18 14:16
-#   Describe      : string symbol constant and define string function
+#   File Name     : string_io.c
+#   Last Modified : 2018-11-19 18:47
+#   Describe      : string input and output demo
 #
 # ====================================================*/
 
-#define ANIMALS "mickey mouse"
-#define STLEN 8
+#include <stdio.h>
+#include "str.h"
+
+int main(void)
+{
+	char desc[STLEN];
+	
+	
+	return 0;
+}
