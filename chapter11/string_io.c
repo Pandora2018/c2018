@@ -18,19 +18,15 @@ int main(void)
 	char desc[STLEN];
 
 	puts("Enter string,please:");
-	/*
-	 * while (s_gets(desc, STLEN) != NULL){
-	 *     fputs(desc, stdout);
-	 *     putchar('\n');
-	 * }
-	 */
-	while (1){
-		printf(".");
-		printf("1");
+	while (s_gets(desc, STLEN) != NULL){
+		for (int i = 0; i < STLEN; i++){
+			fputs(desc + i, stdout);
+			putchar('\n');
+		}
 	}
 
 	/*
-	 * scanf("%s", desc);
+	 * scanf("%8s", desc);
 	 * printf("%s\n", desc);
 	 */
 
