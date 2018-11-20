@@ -11,6 +11,7 @@
 # ====================================================*/
 
 #include <stdio.h>
+#include <string.h>
 #include "str.h"
 
 int main(void)
@@ -19,7 +20,7 @@ int main(void)
 
 	puts("Enter string,please:");
 	while (s_gets(desc, STLEN) != NULL){
-		for (int i = 0; i < STLEN; i++){
+		for (int i = 0; i < strlen(desc); i++){
 			fputs(desc + i, stdout);
 			putchar('\n');
 		}
