@@ -16,7 +16,23 @@
 int main(void)
 {
 	char desc[STLEN];
-	
-	
+
+	puts("Enter string,please:");
+	/*
+	 * while (s_gets(desc, STLEN) != NULL){
+	 *     fputs(desc, stdout);
+	 *     putchar('\n');
+	 * }
+	 */
+	while (1){
+		printf(".");
+		printf("1");
+	}
+
+	/*
+	 * scanf("%s", desc);
+	 * printf("%s\n", desc);
+	 */
+
 	return 0;
 }

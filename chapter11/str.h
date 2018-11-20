@@ -5,10 +5,12 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : str.h
-#   Last Modified : 2018-11-18 14:16
-#   Describe      : string symbol constant and define string function
+#   Last Modified : 2018-11-20 08:58
+#   Describe      : string symbol constant and string function prototype
 #
 # ====================================================*/
 
 #define ANIMALS "mickey mouse"
 #define STLEN 8
+
+char * s_gets(char * str, int n);
