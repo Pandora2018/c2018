@@ -17,14 +17,20 @@
 int main(void)
 {
 	char desc[STLEN];
+	char addend[] = "test string";
 
 	puts("Enter string,please:");
-	while (s_gets(desc, STLEN) != NULL){
-		for (int i = 0; i < strlen(desc); i++){
-			fputs(desc + i, stdout);
-			putchar('\n');
-		}
-	}
+	/*
+	 * while (s_gets(desc, STLEN) != NULL){
+	 *     // fputs(desc, stdout);
+	 *     // putchar('\n');
+	 *     int n = STLEN - strlen(desc) - 1;
+	 *     strncat(desc, addend, n);
+	 *     puts(desc);
+	 *     puts("Enter string,please:");
+	 * }
+	 */
+
 
 	/*
 	 * scanf("%8s", desc);

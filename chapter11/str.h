@@ -11,6 +11,6 @@
 # ====================================================*/
 
 #define ANIMALS "mickey mouse"
-#define STLEN 10
+#define STLEN 50
 
 char * s_gets(char * str, int n);
