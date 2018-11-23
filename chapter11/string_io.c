@@ -21,7 +21,7 @@ int main(void)
 	// puts("Enter string,please:");
 	puts("Enter a passwords,please:");
 	while (s_gets(input, SIZE)) {
-		if (strncmp(input, PASSWORDS, 5) == 0) {
+		if (strncmp(input, PASSWORDS, 10) == 0) {
 			puts("Welcome to login system!");	
 			printf("you input passwords : %s\n", input);
 			break;
