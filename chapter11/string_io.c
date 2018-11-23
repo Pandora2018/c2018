@@ -16,25 +16,20 @@
 
 int main(void)
 {
-	char input[STLEN];
+	/* char input[STLEN]; */
+	const char * str[] = {
+		"hello world", "hellgoods this",
+		"hel djeijdie", "hydejidiede jiji",
+		"hideihide hihih"
+	};
+	
+	size_t n = sizeof(str) / sizeof(*str);
 
-	// puts("Enter string,please:");
-	puts("Enter a passwords,please:");
-	while (s_gets(input, SIZE)) {
-		if (strncmp(input, PASSWORDS, 10) == 0) {
-			puts("Welcome to login system!");	
-			printf("you input passwords : %s\n", input);
-			break;
-		} else {
-			printf("you input passwords : %s, it's wrong\n", input);
-			puts("you input passwords not right, please again input passwords:");
-		}
+	for (int i = 0; i < n; i++) {
+		if (strncmp(str[i], "he", 2) == 0)
+			printf("Found : %s\n",*(str + i));
 	}
 
-	/*
-	 * scanf("%8s", desc);
-	 * printf("%s\n", desc);
-	 */
-
-	return 0;
+	
+		return 0;
 }
