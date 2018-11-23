@@ -1,6 +1,7 @@
 #!/bin/sh
 
 sudo apt install -y tmux
+sudo apt install -y ascii
 
 # An arbitrary precision calculator language
 # sudo apt install -y bc
