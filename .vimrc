@@ -59,7 +59,7 @@ call plug#end()
 	set autowrite               " 自动保存文件"
 	set smartindent             " 智能对齐方式
 	set ignorecase smartcase    " 智能忽略大小写"
-	" set cursorline           	" 高亮当前行"
+	set cursorline           	" 高亮当前行"
 	" 分割出来的窗口位于当前窗口下边/右边
 	set splitbelow
 	set splitright
