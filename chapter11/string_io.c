@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : string_io.c
-#   Last Modified : 2018-11-19 18:47
+#   Last Modified : 2018-12-01 11:44
 #   Describe      : string input and output demo
 #
 # ====================================================*/
@@ -30,6 +30,20 @@ int main(void)
 			printf("Found : %s\n",*(str + i));
 	}
 
+	fputs("Blow enter a string:\n", stdout);
+
+	char name[20];
+	char * find;
+	char * p = name;
+
+	fgets(name, 100, stdin);
+	find = strchr(name, '\n');
+
+	if (*find)
+		*find = '\0';
+	
+	while (*p != '\0')
+		printf("%c", *p++);
 	
 		return 0;
 }
