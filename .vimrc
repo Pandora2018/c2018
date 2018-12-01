@@ -23,7 +23,10 @@ Plug 'nine2/vim-copyright'
 " Plug 'drmingdrmer/xptemplate'
 
 " A vim plugin to display the indention levels with thin vertical lines 
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
+
+" vim-smooth-scroll makes scrolling in Vim nice and smooth.
+Plug 'terryma/vim-smooth-scroll'
 
 
 call plug#end()
@@ -342,7 +345,15 @@ let g:file_copyright_auto_filetypes = ['sh', 'plx', 'pl', 'pm', 'py', 'python', 
 " }}}
 
 " indentLine {{{
-" let g:indentLine_color_term = 239
+let g:indentLine_color_term = 239
 " where 'c' can be any ASCII character. You can also use one of ¦, ┆, │, ⎸, or ▏ to display more beautiful lines. However, these characters will only work with files whose encoding is UTF-8.
-" let g:indentLine_char = 'c'
+let g:indentLine_char = '¦'
+map <C-i> :IndentLinesToggle<CR> 
+" }}}
+
+" vim-smooth-scroll {{{
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 " }}}
