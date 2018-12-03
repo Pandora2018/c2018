@@ -28,6 +28,12 @@ Plug 'nine2/vim-copyright'
 " vim-smooth-scroll makes scrolling in Vim nice and smooth.
 Plug 'terryma/vim-smooth-scroll'
 
+" Simplify Doxygen documentation in C, C++, Python.
+" Plug 'vim-scripts/DoxygenToolkit.vim'
+
+" True Sublime Text style multiple selections for Vim 
+" Plug 'terryma/vim-multiple-cursors'
+
 
 call plug#end()
 
