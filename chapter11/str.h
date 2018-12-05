@@ -16,3 +16,4 @@
 #define SIZE 10
 
 char * s_gets(char * str, int n);
+void take_s(char * pc, int n);

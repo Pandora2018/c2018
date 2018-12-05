@@ -11,6 +11,7 @@
 # ====================================================*/
 
 #include <stdio.h>
+#include <ctype.h>
 #include "str.h"
 
 // string input
@@ -35,4 +36,24 @@ char * s_gets(char * str, int n)
 	}
 
 	return ret_val;
+}
+
+void take_s(char * pc, int n)
+{
+	char ch;
+	int i = 0;
+
+	while (i < n && (ch = getchar()) != EOF) {
+		if (isspace(ch)) {
+			pc[i] = '\0';
+			break;
+		}
+		
+		pc[i] = ch;
+		++i;
+	}
+	
+	pc[i] = '\0';
+
+	return;
 }
