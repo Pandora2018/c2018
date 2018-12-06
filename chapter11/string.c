@@ -57,3 +57,26 @@ void take_s(char * pc, int n)
 
 	return;
 }
+
+char * take_word(char * word)
+{
+	char ch;
+	int i = 0;
+
+	while ((ch = getchar()) != EOF) {
+		if (isdigit(ch))
+			return NULL;
+
+		if (!isspace(ch)) {
+			word[i++] = ch;
+		} else {
+			word[i] = '\0';
+			break;
+		}
+	}
+
+	while (getchar() != '\n')
+		continue;
+
+	return word;
+}
