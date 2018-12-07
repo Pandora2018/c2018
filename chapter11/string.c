@@ -63,20 +63,17 @@ char * take_word(char * word)
 	char ch;
 	int i = 0;
 
-	while ((ch = getchar()) != EOF) {
+	while ((ch = getchar()) != '\n') {
 		if (isdigit(ch))
 			return NULL;
 
-		if (!isspace(ch)) {
+		if (!isspace(ch))
 			word[i++] = ch;
-		} else {
-			word[i] = '\0';
+		else
 			break;
-		}
 	}
 
-	while (getchar() != '\n')
-		continue;
+	word[i] = '\0';
 
 	return word;
 }

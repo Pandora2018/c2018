@@ -18,14 +18,8 @@ int main(void)
 	char word[10];
 
 	puts("enter string:");
-	/*
-	 * while (take_word(word)) {
-	 *     puts(word);
-	 *     puts("enter string:");
-	 * }
-	 */
-	take_word(word);
-	puts(word);
+	while (take_word(word))
+		puts(word);
 
 	return 0;
 }
