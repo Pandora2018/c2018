@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "str.h"
 
 // string input
@@ -76,4 +77,21 @@ char * take_word(char * word)
 	word[i] = '\0';
 
 	return word;
+}
+
+char * find_ch(char * str, char ch)
+{
+	char * pc = str;
+	bool flag = false;
+
+	while (*pc) {
+		if (*pc != ch)
+			pc++;
+		else {
+			flag = true;
+			break;
+		}
+	}
+
+	return (flag ? pc : NULL);
 }
