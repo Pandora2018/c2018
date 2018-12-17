@@ -103,3 +103,13 @@ int is_within(char * str, char ch)
 
 	return *str;
 }
+
+char * strncopy(char * desc, char * src, int n)
+{
+	for (int i = 0; i < n; i++)
+		*desc++ = *src++;
+
+	*desc = '\0';
+
+	return desc;
+}
