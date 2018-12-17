@@ -19,3 +19,4 @@ char * s_gets(char * str, int n);
 void take_s(char * pc, int n);
 char * take_word(char * word);
 char * find_ch(char * str, char ch);
+int is_within(char * str, char ch);

@@ -95,3 +95,11 @@ char * find_ch(char * str, char ch)
 
 	return (flag ? pc : NULL);
 }
+
+int is_within(char * str, char ch)
+{
+	while (*str != '\0' && *str != ch)
+		str++;
+
+	return *str;
+}
