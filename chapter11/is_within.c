@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : is_within.c
-#   Last Modified : 2018-12-17 13:18
+#   Last Modified : 2018-12-18 08:58
 #   Describe      :
 #
 # ====================================================*/
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	char test[100], ch;
+	char test[20], ch = 'r';
 	int res;
 
 	puts("Please input string:");
@@ -22,19 +22,15 @@ int main(void)
 	while (s_gets(test, 20)) {
 		/* the newline is blankline,then skip */
 		if (*test == '\0') break;
-
-		puts("Please input check character:");
-		scanf("%c", &ch);
+	
 		res = is_within(test, ch);
 		
 		printf("\'%c\' %s\n", ch, res ? "in the string" : "not in the string");
 
-		/* skip to string end */
-		while (getchar() != '\n')
-			continue;
-
 		puts("Please again input string:");
 	}
+
+	puts("Done!");
 	
 	return 0;
 }
