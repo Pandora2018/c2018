@@ -133,3 +133,20 @@ char * string_in(char * str, char * find)
 
 	return NULL;
 }
+
+void str_inversal(char * str)
+{
+	int len = strlen(str);
+	char * end = str + len - 1;
+	char tmp;
+
+	while (str < end) {
+		tmp = *str;
+		*str = *end;
+		*end = tmp;
+		str++;
+		end--;
+	}
+
+	return;
+}

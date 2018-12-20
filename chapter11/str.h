@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : str.h
-#   Last Modified : 2018-12-20 09:33
+#   Last Modified : 2018-12-20 18:55
 #   Describe      : string symbol constant and string function prototype
 #
 # ====================================================*/
@@ -22,3 +22,4 @@ char * find_ch(char * str, char ch);
 int is_within(char * str, char ch);
 char * strncopy(char * desc, char * src, int n);
 char * string_in(char * str, char * find);
+void str_inversal(char * str);
