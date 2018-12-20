@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : str.h
-#   Last Modified : 2018-12-20 09:01
+#   Last Modified : 2018-12-20 09:33
 #   Describe      : string symbol constant and string function prototype
 #
 # ====================================================*/
