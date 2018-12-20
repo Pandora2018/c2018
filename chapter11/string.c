@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <string.h>
 #include "str.h"
 
 // string input
@@ -112,4 +113,23 @@ char * strncopy(char * desc, char * src, int n)
 	*desc = '\0';
 
 	return desc;
+}
+
+char * string_in(char * str, char * find)
+{
+	int str_len, find_len;
+
+	str_len = strlen(str);
+	find_len = strlen(find);
+
+	if (str_len >= find_len) {
+		while (*str != '\0') {
+			if (strncmp(str, find, find_len) == 0)
+				return str;
+
+			str++;
+		}
+	}
+
+	return NULL;
 }
