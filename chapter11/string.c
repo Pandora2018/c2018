@@ -150,3 +150,29 @@ void str_inversal(char * str)
 
 	return;
 }
+
+void del_space(char * str)
+{
+	char * tmp, * ps = str;
+
+	while (*ps) {
+		if (isspace(*ps)) {
+			tmp = ps;
+			
+			do {
+				*tmp = *(tmp + 1);
+			} while (*++tmp);
+
+			/*
+			 * while (*tmp) {
+			 *     *tmp = *(tmp + 1);
+			 *     tmp++;
+			 * }
+			 */
+		}
+
+		ps++;
+	}
+
+	return;
+}
