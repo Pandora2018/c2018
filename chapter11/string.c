@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : string.c
-#   Last Modified : 2018-11-20 08:56
+#   Last Modified : 2018-12-21 19:40
 #   Describe      : about solution string function
 #
 # ====================================================*/
