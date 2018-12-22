@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : string_menu.c
-#   Last Modified : 2018-12-22 10:50
+#   Last Modified : 2018-12-22 16:03
 #   Describe      :
 #
 # ====================================================*/
@@ -56,6 +56,7 @@ int main(void)
 				puts("Program Finish!");
 				return 0;
 			default:
+				printf("You Choose \"%c\" Error, Please Again Choose Iteam\n", ch);
 				break;
 		}
 

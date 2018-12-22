@@ -246,10 +246,10 @@ void first_word_order(int n, char * str[n])
 void meau(void)
 {
 	puts("----------------");
-	puts("a -- Print String Array");
+	puts("a -- Print String");
 	puts("b -- ASCII Order Shouw");
-	puts("c -- Length Order Show");
-	puts("d -- Word Order Show");
+	puts("c -- String Length Order");
+	puts("d -- Word Order");
 	puts("q -- Quiet");
 	puts("---------------");
 

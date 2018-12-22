@@ -1,4 +1,3 @@
-10
 About the manuals ok
 The first steps in Vim
 Moving around
