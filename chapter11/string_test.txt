@@ -1,0 +1,11 @@
+10
+About the manuals ok
+The first steps in Vim
+Moving around
+Making small changes
+set your settings
+Using syntax highlighting
+editing more than one file
+Splitting windows
+using the GUI
+making big changes

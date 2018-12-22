@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : string.c
-#   Last Modified : 2018-12-21 19:40
+#   Last Modified : 2018-12-22 10:00
 #   Describe      : about solution string function
 #
 # ====================================================*/
@@ -140,13 +140,11 @@ void str_inversal(char * str)
 	char * end = str + len - 1;
 	char tmp;
 
-	while (str < end) {
+	do {
 		tmp = *str;
 		*str = *end;
 		*end = tmp;
-		str++;
-		end--;
-	}
+	} while (++str < --end);
 
 	return;
 }
@@ -175,4 +173,91 @@ void del_space(char * str)
 	}
 
 	return;
+}
+
+void str_ascii_order(int n, char * str[n])
+{
+	char * tmp;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (strcmp(str[i], str[j]) < 0) {
+				tmp = str[i];
+				str[i] = str[j];
+				str[j] = tmp;
+			}
+		}
+	}
+
+	return;
+}
+
+void str_len_order(int n, char * str[n])
+{
+	char * tmp;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (strlen(str[i]) > strlen(str[j])) {
+				tmp = str[i];
+				str[i] = str[j];
+				str[j] = tmp;
+			}
+		}
+	}
+
+	return;
+}
+
+int word_cnt(char * str)
+{
+	char ch;
+	int cnt = 0;
+
+	while (ch = *str++) {
+		if (isspace(ch) && cnt == 0)
+			continue;
+		if (isspace(ch) && cnt != 0)
+			break;
+		if (!isspace(ch))
+			cnt++;
+	}
+
+	return cnt;
+}
+
+void first_word_order(int n, char * str[n])
+{
+	char * tmp;
+
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (word_cnt(str[i]) > word_cnt(str[j])) {
+				tmp = str[i];
+				str[i] = str[j];
+				str[j] = tmp;
+			}
+		}
+	}
+
+	return;
+}
+
+void meau(void)
+{
+	puts("----------------");
+	puts("a -- Print String Array");
+	puts("b -- ASCII Order Shouw");
+	puts("c -- Length Order Show");
+	puts("d -- Word Order Show");
+	puts("q -- Quiet");
+	puts("---------------");
+
+	return;
+}
+
+void str_display(int n, char * str[n])
+{
+	for (int i = 0; i < n; i++)
+		puts(str[i]);
 }
