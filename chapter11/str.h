@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : str.h
-#   Last Modified : 2018-12-22 12:57
+#   Last Modified : 2018-12-23 12:54
 #   Describe      : string symbol constant and string function prototype
 #
 # ====================================================*/
@@ -31,3 +31,4 @@ void first_word_order(int n, char * str[n]);
 void str_display(int n, char * str[n]);
 void meau(void);
 int word_cnt(char * str);
+void string_info(const char * str);

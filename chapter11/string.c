@@ -5,7 +5,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : string.c
-#   Last Modified : 2018-12-22 10:00
+#   Last Modified : 2018-12-23 13:06
 #   Describe      : about solution string function
 #
 # ====================================================*/
@@ -260,4 +260,39 @@ void str_display(int n, char * str[n])
 {
 	for (int i = 0; i < n; i++)
 		puts(str[i]);
+}
+
+void string_info(const char * str)
+{
+	int lower_cnt = 0;
+	int upper_cnt = 0;
+	int punct_cnt = 0;
+	int digit_cnt = 0;
+	int word_cnt = 0;
+	bool is_word = true;
+
+	while (*str) {
+		if (islower(*str))
+			lower_cnt++;
+		else if (isupper(*str))
+			upper_cnt++;
+		else if (ispunct(*str))
+			punct_cnt++;
+		else if (isdigit(*str))
+			digit_cnt++;
+
+		if (!isspace(*str) && is_word){
+			word_cnt++;
+			is_word = false;
+		} else if (isspace(*str) && !is_word)
+			is_word = true;
+
+		str++;
+	}
+
+	puts("String Infomation:");
+	printf("%d lower letter,%d upper letter,%d punct,%d digit,%d word\n",
+			lower_cnt, upper_cnt, punct_cnt, digit_cnt, word_cnt);
+
+	return;
 }
