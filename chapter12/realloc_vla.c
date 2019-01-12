@@ -22,6 +22,8 @@ int main(void)
 
 	int * pi = (int *)malloc(num * sizeof(int));
 
+	if (!pi) exit(-1);
+
 	for (int i = 0; i < num; i++) {
 		pi[i] = rand() % 100;
 		printf("%3d", pi[i]);
@@ -35,6 +37,18 @@ int main(void)
 	scanf("%d", &num);
 
 	pi = (int *)realloc(pi, num * sizeof(int));
+
+	if (!pi) exit(-1);
+
+	/*
+	 * pi = (int *)realloc(NULL, num * sizeof(int));
+	 * equals to malloc(num * sizeof(int));
+	 */
+
+	/*
+	 * pi = (int *)realloc(pi, 0); 
+	 * equals to free(pi);
+	 */
 
 	for (int i = tmp; i < num; i++ ) {
 		pi[i] = rand() % 100;
