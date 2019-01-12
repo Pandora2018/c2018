@@ -4,8 +4,8 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : realloc_vla.c
-#   Last Modified : 2019-01-12 09:52
-#   Describe      :
+#   Last Modified : 2019-01-12 10:36
+#   Describe      : use realloc() implement variable length array
 #
 # ====================================================*/
 
@@ -22,7 +22,7 @@ int main(void)
 
 	int * pi = (int *)malloc(num * sizeof(int));
 
-	if (!pi) exit(-1);
+	if (!pi) exit(EXIT_FAILURE);
 
 	for (int i = 0; i < num; i++) {
 		pi[i] = rand() % 100;
@@ -31,23 +31,21 @@ int main(void)
 
 	tmp = num;
 
-	puts("");
+	putchar('\n');
 
 	puts("Enter again a number:");
 	scanf("%d", &num);
 
 	pi = (int *)realloc(pi, num * sizeof(int));
 
-	if (!pi) exit(-1);
+	if (!pi) exit(EXIT_FAILURE);
 
 	/*
-	 * pi = (int *)realloc(NULL, num * sizeof(int));
-	 * equals to malloc(num * sizeof(int));
+	 * pi = (int *)realloc(NULL, num * sizeof(int)); --> equals to malloc(num * sizeof(int));
 	 */
 
 	/*
-	 * pi = (int *)realloc(pi, 0); 
-	 * equals to free(pi);
+	 * pi = (int *)realloc(pi, 0); --> equals to free(pi);
 	 */
 
 	for (int i = tmp; i < num; i++ ) {
