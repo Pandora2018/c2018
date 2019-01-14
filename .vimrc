@@ -34,6 +34,8 @@ Plug 'terryma/vim-smooth-scroll'
 " True Sublime Text style multiple selections for Vim 
 " Plug 'terryma/vim-multiple-cursors'
 
+" Display c/c++ function declaration in vim command/status line. 
+Plugin 'mbbill/echofunc'
 
 call plug#end()
 
