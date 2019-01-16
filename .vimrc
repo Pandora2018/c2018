@@ -35,7 +35,7 @@ Plug 'terryma/vim-smooth-scroll'
 " Plug 'terryma/vim-multiple-cursors'
 
 " Display c/c++ function declaration in vim command/status line. 
-Plugin 'mbbill/echofunc'
+Plug 'mbbill/echofunc'
 
 call plug#end()
 
