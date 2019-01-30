@@ -23,6 +23,11 @@ int main(void)
 	/* int boxes[30]; */
 	int * boxes = (int *)calloc(30, sizeof(int));
 
+	if (NULL == boxes) {
+		printf("Program error\n");
+		exit(-1);
+	}
+
 	for (int id = 0; id < 30; id++) {
 		tmp = rand() % 10;
 
@@ -51,6 +56,8 @@ int main(void)
 		if (id % 10 == 0)
 			putchar('\n');
 	}
+
+	free(boxes);
 
 	return 0;
 }
