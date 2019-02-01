@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : num_cnt.c
-#   Last Modified : 2019-01-30 16:22
+#   Last Modified : 2019-02-01 11:46
 #   Describe      :
 #
 # ====================================================*/
@@ -30,10 +30,13 @@ int main(void)
 		srand(sed);
 
 		for (int id = times * 100; id < (times + 1) * 100; id++) {
-			tmp = rand() % 10;
-			boxes[id] = (0 == tmp ? tmp + 1 :
-					(9 == tmp ? tmp + 1 : tmp)
-					);
+			/*
+			 * tmp = rand() % 10;
+			 * boxes[id] = (0 == tmp ? tmp + 1 :
+			 *         (9 == tmp ? tmp + 1 : tmp)
+			 *         );
+			 */
+			boxes[id] = rand() % 10 + 1;
 		}
 		
 		times++;
@@ -63,6 +66,7 @@ int main(void)
 		total += res[j];
 	}
 
+	printf("------------\n");
 	printf("total : %d\n", total);
 
 	free(boxes);
