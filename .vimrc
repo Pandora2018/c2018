@@ -167,9 +167,6 @@ set guitablabel=%{ShortTabLabel()}
 	" iabbrev seg segment
 	" C lanuage abbr
 	iabbrev main int main(void)<CR>{<CR><CR><CR>return 0;}
-	" iabbrev #io #include <stdio.h><CR>
-	" iabbrev #is #include <string.h><CR>
-	" iabbrev #im #include <math.h><CR>
 " }}}
 
 " mydiff {{{
