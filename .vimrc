@@ -37,6 +37,9 @@ Plug 'terryma/vim-smooth-scroll'
 " Display c/c++ function declaration in vim command/status line. 
 Plug 'mbbill/echofunc'
 
+" UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips! 
+Plug 'SirVer/ultisnips'
+
 call plug#end()
 
 " General {{{
@@ -361,4 +364,14 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+" }}}
+
+" ultisnips {{{
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<S-tab>"
+let g:UltiSnipsJumpForwardTrigger="<S-f>"
+let g:UltiSnipsJumpBackwardTrigger="<S-b>"
+
+" If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsEditSplit="vertical"
 " }}}
