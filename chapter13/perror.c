@@ -18,7 +18,7 @@ int main(void)
 
 	if ((fp = fopen("file", "r")) == NULL)
 	{
-		perror("file open failure");
+		perror("file open fail");
 		exit(-1);
 	}
 

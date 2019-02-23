@@ -10,7 +10,8 @@
 # ====================================================*/
 
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(void)
 {
@@ -29,6 +30,15 @@ int main(void)
 	fread(st, 1, 50, fp);
 
 	fprintf(stdout, "%s", st);
+
+	/*
+	 * for (int i = 0; i < strlen(st); i++)
+	 * {
+	 *     [> printf("%c", st[i]); <]
+	 *     printf("%3d - ", i + 1);
+	 *     fprintf(stdout, "%c", st[i]);
+	 * }
+	 */
 
 	if (fclose(fp) == EOF)
 		fprintf(stderr, "%s\n", "close file failure");

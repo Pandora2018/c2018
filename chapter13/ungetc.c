@@ -26,8 +26,8 @@ int main(void)
 
 	ch = getc(fp);
 	printf("postion : %ld\n", ftell(fp));
-	ungetc(ch, fp);
-	printf("postion : %ld\n", ftell(fp));
+	char c = ungetc(ch, fp);
+	printf("back character : %c,postion : %ld\n", c, ftell(fp));
 	
 	while (! feof(fp))
 	{
@@ -38,7 +38,7 @@ int main(void)
 		else
 			ungetc(ch, fp);
 
-		fread(str, sizeof(char), 50, fp);
+		fread(str, 30, 1, fp);
 		printf("%s\n", str);
 	}
 

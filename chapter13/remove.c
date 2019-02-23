@@ -29,7 +29,7 @@ int main(void)
 	if (remove("del") == 0)
 		printf("del successfull\n");
 	else
-		printf("del file failure\n");
+		perror("del file failure");
 
 	return 0;
 }
