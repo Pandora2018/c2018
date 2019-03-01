@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : file.c
-#   Last Modified : 2019-02-28 18:19
+#   Last Modified : 2019-03-01 11:00
 #   Describe      :
 #
 # ====================================================*/
@@ -30,6 +30,35 @@ void mk_real(void)
 				putc('.',fp);
 			
 			putc(rand() % 10 + '0', fp);
+		}
+
+		putc('\n', fp);
+	}
+
+	fclose(fp);
+
+	return;
+}
+
+void mktext(void)
+{
+	FILE *fp = NULL;
+	int num;
+
+	if ((fp = fopen("document.txt", "w")) == NULL)
+	{
+		fprintf(stderr, "%s\n", "Open or creater file failure");
+		exit(EXIT_FAILURE);
+	}
+
+	srand((unsigned int)time(NULL));
+
+	for (int line = 0; line < 50; ++line)
+	{
+		num = rand() % 256;		// each line more than 256 character
+		for (int c = 0; c < num; ++c)
+		{
+			putc(33 + rand() % 93, fp);
 		}
 
 		putc('\n', fp);
