@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : file.c
-#   Last Modified : 2019-03-01 11:00
+#   Last Modified : 2019-03-03 11:15
 #   Describe      :
 #
 # ====================================================*/
@@ -65,6 +65,35 @@ void mktext(void)
 	}
 
 	fclose(fp);
+
+	return;
+}
+
+void copy_file(const char *sour_file, const char *dest_file)
+{
+	char tmp[256];
+	FILE *s_fp = NULL;
+	FILE *d_fp = NULL;
+
+	if ((s_fp = fopen(sour_file, "r"))  == NULL)
+	{
+		fprintf(stderr, "Source file : \"%s\" not exist\n",
+				sour_file);
+		exit(EXIT_FAILURE);
+	}
+	
+	if ((d_fp = fopen(dest_file, "w"))  == NULL)
+	{
+		fprintf(stderr, "destination file : \"%s\" error\n",
+				dest_file);
+		exit(EXIT_FAILURE);
+	}
+
+	while (fgets(tmp, 256, s_fp) != NULL)
+		fputs(tmp, d_fp);
+
+	fclose(s_fp);
+	fclose(d_fp);
 
 	return;
 }
