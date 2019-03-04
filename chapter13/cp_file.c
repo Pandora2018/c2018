@@ -3,13 +3,20 @@
 #
 #   Author        : Pandora
 #   Email         : pandora@github.com
-#   File Name     : file.h
-#   Last Modified : 2019-03-04 13:55
+#   File Name     : cp_file.c
+#   Last Modified : 2019-03-04 14:13
 #   Describe      :
 #
 # ====================================================*/
 
-void mk_real(void);
-void mktext(void);
-void copy_file(const char *sour_file, const char *dest_file);
-void cp_file(void);
+#include <stdio.h>
+#include "file.h"
+
+int main(void)
+{
+	cp_file();
+	
+	printf("copy file finish!\n");
+
+	return 0;
+}

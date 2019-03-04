@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : file.c
-#   Last Modified : 2019-03-03 11:15
+#   Last Modified : 2019-03-04 15:04
 #   Describe      :
 #
 # ====================================================*/
@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 void mk_real(void)
 {
@@ -94,6 +96,65 @@ void copy_file(const char *sour_file, const char *dest_file)
 
 	fclose(s_fp);
 	fclose(d_fp);
+
+	return;
+}
+
+void cp_file(void)
+{
+	char fname[64];
+	char dstfname[64];
+	FILE *so_fp = NULL;
+	FILE *dst_fp = NULL;
+
+	puts("Please input copy file name");
+	scanf("%s", fname);
+
+	int i;
+	char *pos = NULL;
+	// get copy file name
+	if (strchr(fname, '.'))
+	{
+		for (i = 0, pos = fname; *pos != '.';
+				++pos, ++i)
+		{
+			dstfname[i] = *pos;
+		}	
+	}
+	else
+	{
+		printf("File name must be '.' sepreation\n");
+		exit(EXIT_FAILURE);
+	}
+
+	strcat(dstfname, ".bak");
+
+	pos = NULL;
+
+	if ((so_fp = fopen(fname, "r")) == NULL)
+	{
+		fprintf(stderr, "%s open fail!\n", fname);
+		exit(EXIT_FAILURE);
+	}
+	
+	if ((dst_fp = fopen(dstfname, "w")) == NULL)
+	{
+		fprintf(stderr, "%s open fail!\n", dstfname);
+		exit(EXIT_FAILURE);
+	}
+
+	char ch;
+	
+	while ((ch = getc(so_fp)) != EOF)
+	{
+		if (isalpha(ch))
+			putc(toupper(ch), dst_fp);
+		else
+			putc(ch, dst_fp);
+	}
+
+	fclose(so_fp);
+	fclose(dst_fp);
 
 	return;
 }
