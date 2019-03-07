@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : file.c
-#   Last Modified : 2019-03-04 15:04
+#   Last Modified : 2019-03-07 13:12
 #   Describe      :
 #
 # ====================================================*/
@@ -155,6 +155,46 @@ void cp_file(void)
 
 	fclose(so_fp);
 	fclose(dst_fp);
+
+	return;
+}
+
+void seq_print(FILE *first_file, FILE *sec_file)
+{
+	int first_file_line, sec_file_line, line;
+	first_file_line = sec_file_line = line = 0;
+
+	char ch;
+
+	while ((ch = getc(first_file)) != EOF)
+	{
+		if ('\n' == ch)
+			++first_file_line;
+	}
+
+	while ((ch = getc(sec_file)) != EOF)
+	{
+		if ('\n' == ch)
+			++sec_file_line;
+	}
+
+	line = (first_file_line > sec_file_line) ? first_file_line :
+			sec_file_line;
+
+	char first_file_content[256], sec_file_content[256];
+
+	for (int i = 0; i < line; ++i)
+	{
+		if (fgets(first_file_content, 256, first_file) != NULL)
+		{
+			printf("%d line :\n%s\n", i + 1, first_file_content);
+		}
+
+		if (fgets(sec_file_content, 256, sec_file) != NULL)
+		{
+			printf("%d line : \n%s\n", i + 1, sec_file_content);
+		}
+	}
 
 	return;
 }
