@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		printf("The program must be 3 parameter\n");
 		exit(EXIT_FAILURE);
 	}
-
+	
 	if ((first_fp = fopen(argv[1] ,"r")) != NULL &&
 			(second_fp = fopen(argv[2] ,"r")) != NULL)
 	{
@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 
 	fclose(first_fp);
 	fclose(second_fp);
+
+	first_fp = second_fp = NULL;
 
 	return 0;
 }
