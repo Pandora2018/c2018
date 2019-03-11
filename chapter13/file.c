@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : file.c
-#   Last Modified : 2019-03-08 10:34
+#   Last Modified : 2019-03-11 14:04
 #   Describe      :
 #
 # ====================================================*/
@@ -196,4 +196,20 @@ void seq_print(FILE *first_file, FILE *sec_file)
 	find = NULL;
 
 	return;
+}
+
+long int report_char(char ch, FILE *fp)
+{
+	long int count = 0;
+	char read_ch = 0;
+	
+	while (feof(fp) == 0)
+	{
+		read_ch = getc(fp);
+		
+		if (read_ch == ch)
+			++count;
+	}
+
+	return count;
 }
