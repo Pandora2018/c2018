@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "file.h"
 
 void mk_real(void)
 {
@@ -212,4 +213,34 @@ long int report_char(char ch, FILE *fp)
 	}
 
 	return count;
+}
+
+char *show_file(long int pos, FILE *fp)
+{
+	char str[256] = { 0 };
+	char *ch = str;
+
+	fseek(fp, 0L, SEEK_END);
+	long int end = ftell(fp);
+
+	fseek(fp, 0L, SEEK_SET);
+	long int start = ftell(fp);
+
+	/* file size */
+	long int size = end - start;
+	printf("size : %ld\n", size);
+	printf("======================\n");
+	
+	if (pos >= 0 && pos <= size)
+		fseek(fp, pos, SEEK_SET);
+	else
+	{
+		printf("You give postion more than file size!\n");
+		exit(EXIT_FAILURE);
+	}
+	
+	if (fgets(str, 256, fp) != NULL)
+		return ch;
+	else
+		exit(EXIT_FAILURE);
 }
