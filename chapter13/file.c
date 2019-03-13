@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : file.c
-#   Last Modified : 2019-03-11 14:04
+#   Last Modified : 2019-03-13 09:28
 #   Describe      :
 #
 # ====================================================*/
@@ -166,9 +166,7 @@ void seq_print(FILE *first_file, FILE *sec_file)
 	char sec_file_content[256] = { 0 };
 	char *find = NULL;
 
-	while ((feof(first_file)) == 0 || (feof(sec_file)) == 0)
-	{
-/*
+	while ((feof(first_file)) == 0 || (feof(sec_file)) == 0) { /*
  *         if (fgets(first_file_content, 256, first_file) != NULL)
  *         {
  *             fputs(first_file_content, stdout);
@@ -243,4 +241,18 @@ char *show_file(long int pos, FILE *fp)
 		return ch;
 	else
 		exit(EXIT_FAILURE);
+}
+
+long int show_line(const char *str, FILE *fp)
+{
+	char line[256] = { 0 };
+	long int line_num = 0;	// set line number from 1
+
+	while (fgets(line, 256, fp))
+	{
+		if (strstr(line, str))
+			printf("%2ld : %s", ++line_num, line);
+	}
+
+	return line_num;
 }
