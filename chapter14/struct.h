@@ -4,16 +4,22 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : struct.h
-#   Last Modified : 2019-03-15 18:48
+#   Last Modified : 2019-03-17 11:48
 #   Describe      :
 #
 # ====================================================*/
 
-struct car // car is struct tag
-{ // member-list
+struct car
+{
 	char brand[30];
 	char color[20];
 	float length;
 	float width;
 	float height;
+};
+
+struct point
+{
+	double x;
+	double y;
 };
