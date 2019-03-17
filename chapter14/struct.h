@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : struct.h
-#   Last Modified : 2019-03-17 11:48
+#   Last Modified : 2019-03-17 19:22
 #   Describe      :
 #
 # ====================================================*/
@@ -22,4 +22,10 @@ struct point
 {
 	double x;
 	double y;
+};
+
+struct names
+{
+	char first[30];
+	char last[30];
 };
