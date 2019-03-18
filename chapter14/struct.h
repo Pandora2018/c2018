@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : struct.h
-#   Last Modified : 2019-03-17 19:22
+#   Last Modified : 2019-03-18 14:10
 #   Describe      :
 #
 # ====================================================*/
@@ -26,6 +26,16 @@ struct point
 
 struct names
 {
-	char first[30];
-	char last[30];
+	char *first;
+	char *last;
 };
+
+struct friends
+{
+	struct names name;
+	long int id;
+	float weight;
+};
+
+static struct friends makeinfo(struct friends *boy);
+static void getinfo(long int id, float weight);
