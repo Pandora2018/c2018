@@ -11,11 +11,11 @@
 
 struct car
 {
-	char brand[30];
-	char color[20];
-	float length;
-	float width;
 	float height;
+	float width;
+	float length;
+	char color[20];
+	char brand[30];
 };
 
 struct point
