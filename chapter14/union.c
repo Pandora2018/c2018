@@ -14,24 +14,17 @@
 
 int main(void)
 {
-	union tree t = {.height = 4.5};
+	union tree t = {0x12345678};
+
 	/*
-	 * union tree *p = &(union tree) {.height = 2.30};
-	 * p = &t;
+	 * t.age = 100;
+	 * t.height = 10.03;
+	 * t.flag = 1;
 	 */
 
-	t.age = 100;
-	t.height = 10.03;
-	t.flag = 1;
-
-	/* printf("sizeof(p) = %zd Byte\n", sizeof(p)); */
-
-	printf("sizeof(t) : %zdByte\n", sizeof(t));
-	printf("sizeof(union tree) %zd Byte\n", sizeof(union tree));
-
-	/* printf("t.age = %d\n", t.age); */
+	printf("t.age = %#x\n", t.age);
 	/* printf("t.flag = %d\n", t.flag); */
-	printf("t.height = %.2f\n", t.height);
+	/* printf("t.height = %.2f\n", t.height); */
 	/* printf("p->height : %.2f\n", p->height); */
 
 	return 0;
