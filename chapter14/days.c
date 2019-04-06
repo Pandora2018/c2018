@@ -10,6 +10,7 @@
 # ====================================================*/
 
 #include <stdio.h>
+#include <ctype.h>
 
 unsigned int days_cnt(const char *mon);
 
@@ -17,12 +18,13 @@ int main(void)
 {
 	char month[4] = { 0 };
 
-	/*
-	 * printf("Enter month:\n");
-	 * fscanf(stdin, "%s", month);
-	 */
+	printf("Enter month:\n");
+	fscanf(stdin, "%s", month);
 
-	unsigned int total = days_cnt("Dec");
+	// month first letter conversion to upper letter
+	month[0] = toupper(month[0]);
+
+	unsigned int total = days_cnt(month);
 
 	printf("The first month to %s has %u days\n",
 			month, total);

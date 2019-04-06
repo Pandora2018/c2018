@@ -66,4 +66,4 @@ month list[12] =
 	}
 };
 
-unsigned int days_cnt(const char *mon);
+// unsigned int days_cnt(const char *mon);
