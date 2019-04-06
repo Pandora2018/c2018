@@ -18,25 +18,6 @@ struct car
 	char brand[30];
 };
 
-struct point
-{
-	double x;
-	double y;
-};
-
-struct names
-{
-	char *first;
-	char *last;
-};
-
-struct friends
-{
-	struct names name;
-	long int id;
-	float weight;
-};
-
 typedef struct _Month
 {
 	char name[15];
@@ -85,6 +66,4 @@ month list[12] =
 	}
 };
 
-static struct friends makeinfo(struct friends *boy);
-static void getinfo(long int id, float weight);
-int days_cnt(const char *mon);
+unsigned int days_cnt(const char *mon);

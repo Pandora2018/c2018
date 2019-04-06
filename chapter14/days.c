@@ -10,16 +10,19 @@
 # ====================================================*/
 
 #include <stdio.h>
-#include "struct.h"
+
+unsigned int days_cnt(const char *mon);
 
 int main(void)
 {
 	char month[4] = { 0 };
 
-	printf("Enter month:\n");
-	fscanf(stdin, "%s", month);
+	/*
+	 * printf("Enter month:\n");
+	 * fscanf(stdin, "%s", month);
+	 */
 
-	int total = days_cnt(month);
+	unsigned int total = days_cnt("Dec");
 
 	printf("The first month to %s has %u days\n",
 			month, total);
