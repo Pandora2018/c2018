@@ -66,4 +66,16 @@ month list[12] =
 	}
 };
 
+struct day
+{
+	unsigned char mday;	// 1 ~ 31
+	union
+	{
+		unsigned char month_id;		// 1 ~ 12
+		char abbr_month[4];
+		char full_month[20];
+	};
+	unsigned int year;
+};
+
 // unsigned int days_cnt(const char *mon);
