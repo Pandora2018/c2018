@@ -1,3 +1,14 @@
+/* ====================================================
+#   Copyright (C)2019 All rights reserved.
+#
+#   Author        : Pandora
+#   Email         : pandora@github.com
+#   File Name     : scanfDemo.c
+#   Last Modified : 2019-04-08 14:16
+#   Describe      :
+#
+# ====================================================*/
+
 #include <stdio.h>
 
 int main(void)

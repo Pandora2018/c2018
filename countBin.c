@@ -1,3 +1,14 @@
+/* ====================================================
+#   Copyright (C)2019 All rights reserved.
+#
+#   Author        : Pandora
+#   Email         : pandora@github.com
+#   File Name     : countBin.c
+#   Last Modified : 2019-04-08 14:15
+#   Describe      :
+#
+# ====================================================*/
+
 #include <stdio.h>
 
 unsigned long long int countBin(unsigned int n);
