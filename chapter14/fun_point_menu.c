@@ -61,5 +61,11 @@ int main(void)
 
 	puts("Finish!");
 
+/*
+ *     int size = (char *)func_c - (char *)func_b;
+ * 
+ *     printf("size = %d\n", size);
+ */
+
 	return 0;
 }
