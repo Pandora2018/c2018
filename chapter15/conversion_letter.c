@@ -14,10 +14,11 @@
 int main(void)
 {
 	unsigned char ch = 'a';
+	const unsigned char MASK = 0x20;
 
 	do
 	{
-		printf("%c ", ch & 0xDF);	// lower to upper
+		printf("%c ", ch ^ MASK);	// lower to upper
 	} while (++ch <= 'z');
 
 	putchar('\n');
@@ -25,7 +26,7 @@ int main(void)
 	ch = 'A';
 	do
 	{
-		printf("%c ", ch | 0x20);	// upper to lower
+		printf("%c ", ch ^ MASK);	// upper to lower
 	} while (++ch <= 'Z');
 
 	putchar('\n');
