@@ -19,15 +19,17 @@ int main(void)
 {
 	/* int test[] = {30, 12, 1, 3, 5, 9}; */
 	/* char test[] = {'f', 'r','t'}; */
-	/* double test[] = {0.21, 3.21, 0.11, 1.21}; */
-	char test[][20] =
-	{
-		"chenzhou",
-		"beijing",
-		"hunan",
-		"gangsusheng",
-		"sichang",
-	};
+	double test[] = {0.21, 3.21, 3.21, 0.11, 1.21};
+	/*
+	 * char test[][20] =
+	 * {
+	 *     "chenzhou",
+	 *     "beijing",
+	 *     "hunan",
+	 *     "gangsusheng",
+	 *     "sichang",
+	 * };
+	 */
 
 	qsort(test, 5, sizeof(test[0]), compare);
 
@@ -35,7 +37,7 @@ int main(void)
 	
 	for (int i = 0; i < sizeof(test) / sizeof(test[0]); ++i)
 	{
-		printf("%s\n", test[i]);
+		printf("%.2f ", test[i]);
 	}
 
 	putchar('\n');
@@ -45,6 +47,7 @@ int main(void)
 
 int compare(const void *e1, const void *e2)
 {
+	return (*(double *)e1 > *(double *)e2 ? 1 : -1);
 	/* return (strcmp(*(char **)e2, *(char **)e1)); */
-	return (strlen((char *)e1) > strlen((char *)e2) ? 1 : -1);
+	/* return (strlen((char *)e1) > strlen((char *)e2) ? 1 : -1); */
 }
