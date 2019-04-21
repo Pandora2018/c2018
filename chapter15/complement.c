@@ -27,5 +27,32 @@ int main(void)
 
 	}
 
+	/*
+	 * unsigned char a, b, c, d;
+	 * int x = 0x12345678;
+	 * 
+	 * a = x & 0xff;
+	 * x >>= 8;
+	 * b = x & 0xff;
+	 * x >>= 8;
+	 * c = x & 0xff;
+	 * x >>= 8;
+	 * d = x & 0xff;
+	 */
+	/* x >>= 8; */
+
+	/*
+	 * printf("%hhx, %hhx, %hhx, %hhx\n", a, b, c, d);
+	 * printf("x = %x\n", x);
+	 */
+
+	unsigned int d = 0xdea;
+	const unsigned int MASK	= 0x4;
+
+	if ((d & MASK) == MASK)
+		printf("variable 'd' third bit is '1'\n");
+	else
+		printf("variable 'd' third bit not is '1'\n");
+
 	return 0;
 }
