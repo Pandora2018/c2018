@@ -18,6 +18,8 @@ int main(void)
 	printf("Enter binary string :");
 	scanf("%32s", sbin);
 
+	sbin[32] = '\0';
+
 	int res = bin_to_dec(sbin);
 
 	printf("Binary string : %s, decimal : %d\n", sbin, res);
