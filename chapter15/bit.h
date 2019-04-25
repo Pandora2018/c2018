@@ -10,3 +10,7 @@
 # ====================================================*/
 
 int bin_to_dec(const char *sbin);
+void bit_and(const char *s1, const char *s2);
+void bit_or(const char *s1, const char *s2);
+void bit_xor(const char *s1, const char *s2);
+void bit_not(const char *s);
