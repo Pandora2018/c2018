@@ -4,7 +4,7 @@
 #   Author        : Pandora
 #   Email         : pandora@github.com
 #   File Name     : bit.c
-#   Last Modified : 2019-04-24 10:35
+#   Last Modified : 2019-04-27 17:41
 #   Describe      :
 #
 # ====================================================*/
@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <limits.h>
 
 int bin_to_dec(const char *sbin)
 {
@@ -76,6 +77,38 @@ void bit_not(const char *s)
 			printf("0");
 		else
 			printf("1");
+	}
+
+	return;
+}
+
+unsigned int rotate(unsigned int num, unsigned int offset)
+{
+	int mask;
+
+	for (int i = 1; i <= offset; ++i)
+	{
+		mask = (num & 0x80) >> 7;
+		num <<= 1;
+		num ^= mask;
+	}
+
+	return num;
+}
+
+void to_bin(int num)
+{
+	for (int i = 1; i <= CHAR_BIT; ++i)
+	{
+		if (num & 0x80)
+			putchar('1');
+		else
+			putchar('0');
+
+		num <<= 1;
+
+		if (i % 4 == 0)
+			putchar(' ');
 	}
 
 	return;
