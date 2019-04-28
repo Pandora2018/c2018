@@ -13,6 +13,7 @@
 #include <string.h>
 #include <math.h>
 #include <limits.h>
+#include "bit.h"
 
 int bin_to_dec(const char *sbin)
 {
@@ -110,6 +111,110 @@ void to_bin(int num)
 		if (i % 4 == 0)
 			putchar(' ');
 	}
+
+	return;
+}
+
+void show_font(const font *pf)
+{
+	printf("%3s %4s %9s %3s %3s %3s\n",
+			"ID", "SIZE", "ALIGNMENT", "B", "I", "U");
+
+	printf("%3hhu %4hhu %9s %3s %3s %3s\n",
+			pf->font_id,
+			pf->font_size,
+			pf->alignment == 0 ? "left" : (pf->alignment == 1 ? "center" : "right"),
+			pf->bold == 0 ? "off" : "on",
+			pf->italic == 0 ? "off" : "on",
+			pf->underline == 0 ? "off" : "on");
+
+	return;
+}
+
+void menu(void)
+{
+	printf("d) Change id; s) Change size; a)Change alignment;\n");
+	printf("b) Toggle bold; i) Toggle italic; u) Toggle underline;\n");
+	printf("q) Quit\n");
+
+	return;
+}
+
+void chg_id(font *pf)
+{
+	unsigned char id;
+
+	printf("Enter font id (0-255) : ");
+	scanf("%hhu", &id);
+	
+	pf->font_id = id;
+
+	return;
+}
+
+void chg_size(font *pf)
+{
+	unsigned char size;
+	
+	printf("Enter font size (0-127) : ");
+	scanf("%hhu", &size);
+
+	pf->font_size = size;
+
+	return;
+}
+
+void chg_alig(font *pf)
+{
+	char align;
+	getchar();		// delete \n character from buffer
+
+	printf("l) left  c) center  r) right\n");
+	printf("Select alignment : ");
+	align = getchar();
+
+	switch (align)
+	{
+		case 'l': pf->alignment = 0; break;
+		case 'c': pf->alignment = 1; break;
+		case 'r': pf->alignment = 2; break;
+	}
+
+	return;
+}
+
+void chg_bold(font *pf)
+{
+	unsigned char bold;	
+
+	printf("Isn't bold ? : ");
+	scanf("%hhu", &bold);
+
+	pf->bold = bold;
+
+	return;
+}
+
+void chg_italic(font *pf)
+{
+	unsigned char italic;
+
+	printf("Isn't italic : ");
+	scanf("%hhu", &italic);
+
+	pf->italic = italic;
+
+	return;
+}
+
+void chg_underline(font *pf)
+{
+	unsigned char underline;
+
+	printf("Isn't underline : ");
+	scanf("%hhu", &underline);
+
+	pf->underline = underline;
 
 	return;
 }
