@@ -11,16 +11,15 @@
 
 /* #line 202 "hello world" */
 
-#ifndef TEST
-	#define TEST 1
-#endif
+#ifndef PREPROC_H_
+#define PREPROC_H_
 
 #ifndef CUBE
-	#define CUBE(X) ((X)*(X)*(X))
+#	define CUBE(x) ((x)*(x)*(x))
 #endif
 
 #ifndef SUB
-	#define SUB(X, Y) printf(#X " - " #Y " = %d\n", X - Y)
+#	define SUB(x, y) printf(#x " - " #y " = %d\n", x - y)
 #endif
 
 #if 0
@@ -47,6 +46,23 @@
 #endif
 
 #ifndef PASTER
-	#define XNAME(N) x##N
-	#define PRI(x) printf("X = %d\n", x);
+#	define XNAME(n) x##n
+#	define PRI(x) printf("X = %d\n", x);
+#endif
+
+inline static double cube(double x)
+{
+	return (x * x * x);
+}
+
+inline static double fact(int x)
+{
+	double res = 1.00;
+
+	for (int i = 1; i <= x; ++i)
+		res *= i;
+
+	return res;
+}
+
 #endif

@@ -11,6 +11,7 @@
 
 /* #include <stdio.h> */
 #include "preproc.h"
+#pragma c9x on
 
 #line 40 "hello world.c"
 
