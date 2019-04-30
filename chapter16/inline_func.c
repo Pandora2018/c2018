@@ -30,7 +30,8 @@ int main(void)
 
 	printf("test : %#x\n", *(int *)test);
 
-	int ans = *(int *)_Generic(test, char[3] : test + 1, unsigned int : test - 2, float : test - 1, default : test);
+	int ans = *(int *)_Generic(test, char[3] : test + 1, unsigned int : test - 2,
+			float : test - 1, default : test);
 
 	printf("ans : %#x\n", ans);
 

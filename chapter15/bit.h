@@ -9,6 +9,9 @@
 #
 # ====================================================*/
 
+#ifndef BIT_H_
+#define BIT_H_
+
 typedef struct _font
 {
 	unsigned char font_id 	: 8;
@@ -36,3 +39,5 @@ void chg_alig(font *pf);
 void chg_bold(font *pf);
 void chg_italic(font *pf);
 void chg_underline(font *pf);
+
+#endif

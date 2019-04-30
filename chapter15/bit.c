@@ -115,7 +115,7 @@ void to_bin(int num)
 	return;
 }
 
-void show_font(const font *pf)
+inline void show_font(const font *pf)
 {
 	printf("%3s %4s %9s %3s %3s %3s\n",
 			"ID", "SIZE", "ALIGNMENT", "B", "I", "U");
@@ -131,7 +131,7 @@ void show_font(const font *pf)
 	return;
 }
 
-void menu(void)
+inline void menu(void)
 {
 	printf("d) Change id; s) Change size; a)Change alignment;\n");
 	printf("b) Toggle bold; i) Toggle italic; u) Toggle underline;\n");
@@ -146,7 +146,7 @@ void chg_id(font *pf)
 
 	printf("Enter font id (0-255) : ");
 	scanf("%hhu", &id);
-	
+
 	pf->font_id = id;
 
 	return;
@@ -154,12 +154,24 @@ void chg_id(font *pf)
 
 void chg_size(font *pf)
 {
-	unsigned char size;
+	char size;
 	
 	printf("Enter font size (0-127) : ");
-	scanf("%hhu", &size);
 
-	pf->font_size = size;
+	while (scanf("%hhd", &size) == 1)
+	{
+		if (size < 0 || size > 127)
+		{
+			printf("Font size between 0 and 127,"
+					"again enter font size : ");
+			continue;
+		}
+		else
+		{
+			pf->font_size = size;
+			break;
+		}
+	}
 
 	return;
 }
