@@ -12,28 +12,29 @@
 #include <stdio.h>
 #include "preproc.h"
 
+_Static_assert(sizeof(long double) == 2 * sizeof(double),
+		"\"long double\" type not \"double\" twice!");
+
 int main(void)
 {
-	double res = fact(130);
+	int num;
+	long double res;
 
-	printf("res = %.2g\n", res);
+	printf("Enter a number : ");
+
+	while(scanf("%d", &num) == 1)
+	{
+		/* assert(num > 0); */
+
+		res = fact(num);
+		printf("res = %.7Lg\n", res);
+		printf("Next number : ");
+	}
 
 	/*
 	 * printf("inline funcion 'cube' address : %p\n", cube);
 	 * printf("inline funcion 'fact' address : %p\n", fact);
 	 */
-
-	// Generic programming
-	/* short test = 'a'; */
-
-	char test[] = "abc";
-
-	printf("test : %#x\n", *(int *)test);
-
-	int ans = *(int *)_Generic(test, char[3] : test + 1, unsigned int : test - 2,
-			float : test - 1, default : test);
-
-	printf("ans : %#x\n", ans);
 
 	return 0;
 }

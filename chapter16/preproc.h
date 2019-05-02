@@ -14,6 +14,8 @@
 #ifndef PREPROC_H_
 #define PREPROC_H_
 
+#include <assert.h>
+
 #ifndef CUBE
 #	define CUBE(x) ((x)*(x)*(x))
 #endif
@@ -57,7 +59,11 @@ inline static double cube(double x)
 
 inline static double fact(int x)
 {
-	double res = 1.00;
+	long double res = 1.00;
+	
+	assert(x >= 0);
+
+	if (x == 0 || x == 1) return res;
 
 	for (int i = 1; i <= x; ++i)
 		res *= i;
