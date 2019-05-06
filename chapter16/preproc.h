@@ -20,6 +20,10 @@
 #	define CUBE(x) ((x)*(x)*(x))
 #endif
 
+#ifndef SIZE
+#	define SIZE 40
+#endif
+
 #ifndef SUB
 #	define SUB(x, y) printf(#x " - " #y " = %d\n", x - y)
 #endif
@@ -41,8 +45,6 @@
 #endif
 #endif
 
-#define SIZE 10
-
 #if SIZE > 2 && SIZE < 20
 	#include <stdio.h>
 #endif
@@ -51,6 +53,9 @@
 #	define XNAME(n) x##n
 #	define PRI(x) printf("X = %d\n", x);
 #endif
+
+static void display_arr(const int *ar, int n);
+void elect(const int *ar, int size, int sel);
 
 inline static double cube(double x)
 {
@@ -69,6 +74,16 @@ inline static double fact(int x)
 		res *= i;
 
 	return res;
+}
+
+inline static void display_arr(const int *ar, int n)
+{
+	assert(n > 0);
+
+	for (int i = 0; i < n; ++i)
+		printf("%d ", ar[i]);
+
+	return;
 }
 
 #endif
