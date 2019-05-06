@@ -54,8 +54,11 @@
 #	define PRI(x) printf("X = %d\n", x);
 #endif
 
-static void display_arr(const int *ar, int n);
+void display_arr(const int *ar, int n);
 void elect(const int *ar, int size, int sel);
+
+double * new_d_arr(int n, ...);
+void show_array(const double *arr, int n);
 
 inline static double cube(double x)
 {
@@ -76,7 +79,8 @@ inline static double fact(int x)
 	return res;
 }
 
-inline static void display_arr(const int *ar, int n)
+#ifdef EXERISE_H_
+inline void display_arr(const int *ar, int n)
 {
 	assert(n > 0);
 
@@ -85,5 +89,7 @@ inline static void display_arr(const int *ar, int n)
 
 	return;
 }
+
+#endif
 
 #endif

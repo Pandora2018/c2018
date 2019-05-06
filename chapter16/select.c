@@ -9,6 +9,8 @@
 #
 # ====================================================*/
 
+#define EXERISE_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -32,6 +34,7 @@ int main(void)
 	printf("Selecet : ");
 	while (scanf("%u", &sel) == 1)
 	{
+		assert(sel < SIZE);
 		elect(test, SIZE, sel);
 		putchar('\n');
 		fputs("Again select : ", stdout);

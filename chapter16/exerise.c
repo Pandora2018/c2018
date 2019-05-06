@@ -13,6 +13,7 @@
 #include <assert.h>
 #include <time.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include "preproc.h"
 
 void elect(const int *ar, int size, int sel)
@@ -41,6 +42,33 @@ void elect(const int *ar, int size, int sel)
 	}
 
 	free(flag);
+
+	return;
+}
+
+double * new_d_arr(int n, ...)
+{
+	assert(n > 0);
+
+	double *res = (double *)malloc(n * sizeof(double));
+
+	va_list ap;
+	va_start(ap, n);
+
+	for (int i = 0; i < n; ++i)
+		*(res + i) = va_arg(ap, double);
+	
+	va_end(ap);
+
+	return res;
+}
+
+void show_array(const double *ar, int n)
+{
+	assert(n > 0);
+
+	for (int i = 0; i < n; ++i)
+		printf("%-5.2f ", ar[i]);
 
 	return;
 }
