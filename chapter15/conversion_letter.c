@@ -18,7 +18,7 @@ int main(void)
 
 	do
 	{
-		printf("%c ", ch ^ MASK);	// lower to upper
+		printf("%3c", ch ^ MASK);	// lower to upper
 	} while (++ch <= 'z');
 
 	putchar('\n');
@@ -26,7 +26,7 @@ int main(void)
 	ch = 'A';
 	do
 	{
-		printf("%c ", ch ^ MASK);	// upper to lower
+		printf("%3c", ch ^ MASK);	// upper to lower
 	} while (++ch <= 'Z');
 
 	putchar('\n');
